@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Status Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1>Project Status Dashboard</h1>
+                <div class="project-info">
+                    <h2 id="project-name">Website Redesign Project</h2>
+                    <span class="client-name">Client: TechCorp Solutions</span>
+                </div>
+            </div>
+            <div class="last-updated">
+                Last updated: <span id="last-updated-date">July 30, 2024</span>
+            </div>
+        </header>
+
+        <!-- Project Overview -->
+        <section class="project-overview">
+            <div class="overview-cards">
+                <div class="card progress-card">
+                    <h3>Overall Progress</h3>
+                    <div class="progress-circle">
+                        <div class="progress-ring">
+                            <div class="progress-fill" data-progress="65"></div>
+                        </div>
+                        <span class="progress-text">65%</span>
+                    </div>
+                </div>
+                
+                <div class="card timeline-card">
+                    <h3>Timeline</h3>
+                    <div class="timeline-info">
+                        <div class="timeline-item">
+                            <span class="label">Start Date:</span>
+                            <span class="value">July 1, 2024</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="label">Expected Completion:</span>
+                            <span class="value">August 15, 2024</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="label">Days Remaining:</span>
+                            <span class="value highlight">16 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card budget-card">
+                    <h3>Budget</h3>
+                    <div class="budget-info">
+                        <div class="budget-item">
+                            <span class="label">Total Budget:</span>
+                            <span class="value">$15,000</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="label">Spent:</span>
+                            <span class="value">$9,750</span>
+                        </div>
+                        <div class="budget-item">
+                            <span class="label">Remaining:</span>
+                            <span class="value highlight">$5,250</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <p>Questions or concerns? Contact us at <a href="mailto:contact@yourcompany.com">contact@yourcompany.com</a></p>
+        </footer>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
