@@ -1,36 +1,42 @@
-# Personal Projects
+# Sean Cook — Projects & Examples
 
-This repository contains my personal development projects and client work examples.
+A living catalog of shipped builds, interactive demos, and example projects from my work with
+**[Halan Digital](https://halandigital.com)**. This is the public companion to my portfolio site:
 
-## Projects
+### → Portfolio: https://sean-cook-portfolio.vercel.app
 
-### 🎯 Project Status Dashboard
-**Location:** `project-dashboard/`  
-**Description:** Professional dashboard for sharing project progress with clients  
-**Tech Stack:** HTML, CSS, JavaScript  
-**Features:** 
-- Interactive progress tracking
-- Timeline and budget management
-- Mobile responsive design
-- Easy client customization
-
-**Demo:** Open `project-dashboard/index.html` in your browser
+I design and build AI-powered systems and automation for businesses — from operational AI and
+custom integrations to interactive web tools and decision systems.
 
 ---
 
-## Setup
+## Live demos
 
-1. Clone this repository
-2. Navigate to any project folder
-3. Open the main HTML file in your browser
+| Project | What it is | Live |
+|---|---|---|
+| **TRAIGA Readiness** | Interactive Texas AI-governance (HB 149) readiness assessment + advisory one-pager | https://traiga-readiness.vercel.app |
+| **REI Summit Command Center** | Real-estate-investing AI agent suite with a CEO-level orchestrator | https://client-rei-summit-command-center.vercel.app |
+| **Operations & Automation Audit** | Interactive companion for an operations + automation audit engagement | https://celestial-audit-companion.vercel.app |
+| **Staffing / ATS Platform** | Applicant-tracking + AI-screening platform build | https://client-scale-virtually-workable-clo.vercel.app/overview |
+| **Marketing Site Build** | Responsive marketing site build | https://client-scale-virtually-website-clon.vercel.app |
 
-## Development Notes
+## Example projects (in this repo)
 
-- Each project is self-contained in its own folder
-- All projects use modern web standards
-- Mobile-first responsive design approach
-- Focus on client-ready, professional interfaces
+### Project Status Dashboard — `project-dashboard/`
+Professional dashboard for sharing project progress with clients: interactive progress tracking,
+timeline/budget views, mobile-responsive, easy to customize. Open `project-dashboard/index.html`.
 
 ---
 
-**Contact:** s.cook20@outlook.com
+## How this repo is maintained
+
+This is a **living showcase** — when a new public-safe deliverable ships (an interactive HTML tool,
+a demo site, a sanitized example), it gets documented here: a row in the demo table and/or a
+self-contained folder with its own short README.
+
+> **⚠️ Public repo — confidentiality boundary.** This repository is PUBLIC. It contains only
+> already-public demos and sanitized examples. **No confidential client material** — no client
+> reports, proposals, pricing, contracts, transcripts, or private data. Those live in private
+> client repositories only. When in doubt, leave it out.
+
+**Contact:** s.cook20@outlook.com · [LinkedIn](https://linkedin.com/in/seancook-2018)
