@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sean Cook — AI leader and forward deployed engineer. Selected projects: production multi-agent AI systems, automation, and platform builds.">
+<meta property="og:title" content="Sean Cook — Selected Projects | Halan Digital">
+<meta property="og:description" content="Production multi-agent AI systems, automation audits, and platform builds. Live demos included.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://work.halandigital.com">
+<title>Sean Cook — Selected Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dark-slate:#0F1315; --dark-surface:#182023; --gold:#C5A059;
+  --stone:#F5F5F0; --teal:#0B4F55; --muted:#9AA3A5; --line:#2A3438;
+  --font-heading:'Oswald',system-ui,sans-serif; --font-body:'Manrope',system-ui,sans-serif;
+  --radius:14px; --radius-sm:8px; --max:1080px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--dark-slate);color:var(--stone);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* Header */
+header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+.name{font-family:var(--font-heading);font-weight:700;font-size:clamp(34px,6vw,52px);letter-spacing:.02em;line-height:1.05}
+.tagline{font-family:var(--font-heading);font-weight:500;color:var(--gold);font-size:clamp(15px,2.4vw,19px);letter-spacing:.04em;margin-top:10px;text-transform:uppercase}
+.contact{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.contact a:hover{color:var(--gold)}
+.intro{margin-top:24px;max-width:760px;font-size:clamp(15px,2vw,17px);color:#D7DCDC}
+.intro strong{color:var(--stone);font-weight:600}
+.build-note{margin-top:16px;max-width:760px;font-size:14px;color:var(--muted);border-left:2px solid var(--gold);padding-left:14px}
+.build-note b{color:var(--gold);font-weight:600}
+
+/* Section */
+.sec-label{font-family:var(--font-heading);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--muted);margin:46px 0 18px}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
+
+/* Card */
+.card{background:var(--dark-surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--gold);transform:translateY(-3px)}
+.feature{grid-column:1/-1;border-color:#3a4a3f}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.badge{font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
+.b-prod{background:rgba(11,79,85,.35);color:#7fd8c4;border:1px solid #2f6f6a}
+.b-live{background:rgba(197,160,89,.16);color:var(--gold);border:1px solid #6b5a35}
+.b-proto{background:rgba(154,163,165,.12);color:var(--muted);border:1px solid var(--line)}
+.b-advisory{background:rgba(255,255,255,.05);color:#cfd6d6;border:1px solid var(--line)}
+.card h3{font-family:var(--font-heading);font-weight:600;font-size:clamp(20px,3vw,25px);letter-spacing:.01em;line-height:1.15}
+.role{color:var(--gold);font-size:13px;font-weight:600;margin-top:6px}
+.card p{margin-top:12px;font-size:15px;color:#D2D8D8}
+.metric{margin-top:14px;font-family:var(--font-heading);font-weight:600;color:var(--stone);font-size:15px;letter-spacing:.01em}
+.metric span{color:var(--gold)}
+.stack{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12px;color:#B9C0C0;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+.actions{margin-top:auto;padding-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--stone);font-family:var(--font-body);font-weight:600;font-size:14px;padding:11px 20px;border-radius:var(--radius-sm);transition:background .15s}
+.btn:hover{background:#0d6068}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(3px)}
+.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--muted)}
+.note-private{font-size:13px;color:var(--muted);font-style:italic}
+.demo-hint{font-size:12px;color:var(--muted);margin-top:10px}
+
+/* Feature inner two-col on desktop */
+@media(min-width:760px){
+  .feature .feature-body{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
+  .feature .feature-side{border-left:1px solid var(--line);padding-left:28px}
+}
+.feature-side h4{font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.feature-side ul{list-style:none;font-size:14px;color:#CDD4D4}
+.feature-side li{padding:5px 0;padding-left:16px;position:relative}
+.feature-side li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--gold);border-radius:50%}
+
+footer{margin-top:60px;padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+footer a:hover{color:var(--gold)}
+.foot-cta{font-family:var(--font-heading);font-weight:600;letter-spacing:.04em;color:var(--stone)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="name">Sean Cook</div>
+    <div class="tagline">AI Leader &nbsp;·&nbsp; Forward Deployed Engineer &nbsp;·&nbsp; Builder</div>
+    <div class="contact">
+      <span>Frisco, TX</span>
+      <a href="mailto:sean@halandigital.com">sean@halandigital.com</a>
+      <a href="https://linkedin.com/in/seancook-2018" target="_blank" rel="noopener">linkedin.com/in/seancook-2018</a>
+      <a href="https://halandigital.com" target="_blank" rel="noopener">halandigital.com</a>
+    </div>
+    <p class="intro">
+      I drive <strong>AI strategy, transformation, and adoption</strong> — and I design and ship the
+      <strong>production systems</strong> that make it real, building them by orchestrating multi-agent clusters
+      myself rather than managing from a distance. Twenty years of high-stakes technical delivery, from
+      reservoir engineering embedded on-site at Saudi Aramco, ExxonMobil, and PetroChina to a live, multi-agent
+      AI recruiting platform screening real candidates today. Below is a selection — several with live demos you can open.
+    </p>
+    <p class="build-note">
+      <b>How I build:</b> every system here was delivered by directing fleets of specialized AI subagents in Claude Code
+      to plan, architect, and implement — then verifying and integrating the output. Applied agentic AI as a daily
+      delivery model, not a slideware concept.
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="sec-label">Flagship — In Production</div>
+  <div class="grid">
+    <article class="card feature">
+      <div class="badges"><span class="badge b-prod">Live in production</span><span class="badge b-advisory">Chief of AI</span></div>
+      <h3>Autonomous AI Recruiting Pipeline</h3>
+      <div class="role">Scale Virtually — Chief of AI</div>
+      <div class="feature-body">
+        <div>
+          <p>
+            A multi-agent system that automates a staffing firm's entire candidate-screening funnel — from application,
+            to AI résumé screening, to an async voice interview, to a scored and routed hiring decision — running live
+            against real applicants with no human touch on the happy path. Built directly into the company's own ATS.
+          </p>
+          <div class="metric"><span>~$0.02</span> per candidate screened &nbsp;·&nbsp; <span>6.5×</span> cost reduction via LLM model-tier routing &nbsp;·&nbsp; <span>~1,800</span> automated test assertions</div>
+          <div class="stack">
+            <span class="chip">n8n orchestration</span><span class="chip">Anthropic Claude</span><span class="chip">Speechace (speech AI)</span>
+            <span class="chip">Supabase</span><span class="chip">Resend</span><span class="chip">Vercel</span><span class="chip">Workable API</span><span class="chip">Node.js</span>
+          </div>
+        </div>
+        <div class="feature-side">
+          <h4>What it does</h4>
+          <ul>
+            <li>AI résumé-vs-job-description screening + talent-decision routing</li>
+            <li>Candidate-facing async voice-interview recorder</li>
+            <li>Speech + content scoring on every recording</li>
+            <li>6 orchestrated workflows with retry/backoff &amp; zero-silent-failure error handling</li>
+          </ul>
+        </div>
+      </div>
+      <div class="actions">
+        <span class="note-private">Internal production system — live walkthrough available on request.</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="sec-label">Live Demos — Open in Your Browser</div>
+  <div class="grid">
+
+    <article class="card">
+      <div class="badges"><span class="badge b-live">Live demo</span></div>
+      <h3>REI AI Command Center</h3>
+      <div class="role">REI Summit 2026 — Designer &amp; Builder</div>
+      <p>An agentic operating-system dashboard fronting <strong>6 specialized AI agents</strong> for real estate investors — portfolio, deal sourcing, rehab, maintenance, tax, and lead reactivation — with a CEO-level orchestrator agent. Demoed live at a national industry summit.</p>
+      <div class="stack"><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">OpenRouter LLMs</span><span class="chip">Tailwind</span><span class="chip">Vercel</span></div>
+      <div class="actions"><a class="btn" href="https://client-rei-summit-command-center.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
+    </article>
+
+    <article class="card">
+      <div class="badges"><span class="badge b-live">Live demo</span></div>
+      <h3>TRAIGA Readiness Platform</h3>
+      <div class="role">Halan Digital — AI Governance Build</div>
+      <p>A self-serve readiness platform for the Texas Responsible AI Governance Act: a <strong>10-question weighted assessment</strong> that returns an exposure tier, the top-3 NIST AI RMF controls, and sector-specific exposure points. Productized AI governance as a conversion engine.</p>
+      <div class="stack"><span class="chip">NIST AI RMF</span><span class="chip">Vanilla JS</span><span class="chip">PDF pipeline</span><span class="chip">Vercel</span></div>
+      <div class="actions"><a class="btn" href="https://traiga-readiness.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
+    </article>
+
+    <article class="card">
+      <div class="badges"><span class="badge b-live">Live demo</span><span class="badge b-advisory">Paid advisory</span></div>
+      <h3>Operations &amp; Automation Audit</h3>
+      <div class="role">Celestial Beerworks — Consultant</div>
+      <p>A paid AI/automation operations audit with a 5-stage n8n architecture and a defensible three-scenario ROI model proving <strong>$12.9K–$49K net annual benefit</strong> (6–20 month payback). Shipped with an interactive decision companion.</p>
+      <div class="metric"><span>$12.9K–$49K</span> modeled net annual benefit</div>
+      <div class="stack"><span class="chip">n8n</span><span class="chip">ROI modeling</span><span class="chip">Process architecture</span><span class="chip">Vercel</span></div>
+      <div class="actions"><a class="btn" href="https://celestial-audit-companion.vercel.app" target="_blank" rel="noopener">View companion <span class="arrow">→</span></a></div>
+    </article>
+
+  </div>
+
+  <div class="sec-label">Platform Builds — Full-Feature Prototypes</div>
+  <div class="grid">
+
+    <article class="card">
+      <div class="badges"><span class="badge b-proto">Prototype</span></div>
+      <h3>Staffing / ATS Platform</h3>
+      <div class="role">Scale Virtually — Builder</div>
+      <p>A 44-page multi-tenant HR &amp; recruiting platform — drag-and-drop ATS pipeline, HR module, time &amp; attendance — with <strong>GPT-4o</strong> job-description generation, résumé parsing, and candidate matching.</p>
+      <div class="stack"><span class="chip">Next.js</span><span class="chip">Prisma</span><span class="chip">Supabase</span><span class="chip">Stripe</span><span class="chip">GPT-4o</span></div>
+      <div class="actions"><a class="btn" href="https://client-scale-virtually-workable-clo.vercel.app/overview" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
+    </article>
+
+    <article class="card">
+      <div class="badges"><span class="badge b-proto">Prototype</span></div>
+      <h3>Real Estate Investment Platform</h3>
+      <div class="role">Scale Virtually — Builder</div>
+      <p>A 27-page investor SaaS platform featuring a proprietary <strong>8-factor Deal Score</strong> algorithm and an OLS-regression CMA tool with flip detection and contract generation.</p>
+      <div class="stack"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase / PostGIS</span><span class="chip">Mapbox</span><span class="chip">Recharts</span></div>
+      <div class="actions"><a class="btn" href="https://client-scale-virtually-website-clon.vercel.app" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="wrap">
+  <span class="foot-cta">Let's talk — <a href="mailto:sean@halandigital.com">sean@halandigital.com</a></span>
+  <span>© 2026 Sean Cook · Halan Digital · Frisco, TX</span>
+</footer>
+
+</body>
+</html>
