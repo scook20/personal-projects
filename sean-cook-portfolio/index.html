@@ -44,7 +44,7 @@ header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
 @media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
 
 /* Card */
-.card{background:var(--dark-surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:border-color .15s,transform .15s}
+.card{background:var(--dark-surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,transform .15s}
 .card:hover{border-color:var(--gold);transform:translateY(-3px)}
 .feature{grid-column:1/-1;border-color:#3a4a3f}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
@@ -53,6 +53,7 @@ header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
 .b-live{background:rgba(197,160,89,.16);color:var(--gold);border:1px solid #6b5a35}
 .b-proto{background:rgba(154,163,165,.12);color:var(--muted);border:1px solid var(--line)}
 .b-advisory{background:rgba(255,255,255,.05);color:#cfd6d6;border:1px solid var(--line)}
+.b-daily{background:rgba(197,160,89,.16);color:var(--gold);border:1px solid #6b5a35}
 .card h3{font-family:var(--font-heading);font-weight:600;font-size:clamp(20px,3vw,25px);letter-spacing:.01em;line-height:1.15}
 .role{color:var(--gold);font-size:13px;font-weight:600;margin-top:6px}
 .card p{margin-top:12px;font-size:15px;color:#D2D8D8}
@@ -79,10 +80,42 @@ header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
 .feature-side li{padding:5px 0;padding-left:16px;position:relative}
 .feature-side li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;background:var(--gold);border-radius:50%}
 
+/* Stat strip */
+.statstrip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-top:20px}
+@media(min-width:640px){.statstrip{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--dark-slate);padding:15px 16px}
+.stat-n{font-family:var(--font-heading);font-weight:700;font-size:clamp(23px,3.6vw,31px);line-height:1;color:var(--gold)}
+.stat-n .unit{font-size:.55em;color:var(--muted);margin-left:3px;letter-spacing:.04em}
+.stat-l{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:7px;line-height:1.35}
+
+/* Diagram */
+.diagram{margin-top:22px;background:var(--dark-slate);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 14px 12px;min-width:0}
+.diagram-scroll{overflow-x:auto;min-width:0;-webkit-overflow-scrolling:touch}
+.diagram-scroll svg{display:block;width:100%;height:auto;min-width:600px}
+.diagram-cap{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
+.scroll-hint{display:none;margin-top:9px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:center}
+@media(max-width:660px){.scroll-hint{display:block}}
+.d-lbl{font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.16em;fill:var(--muted)}
+.d-t{font-family:var(--font-body);font-weight:500;font-size:11px;fill:#CDD4D4}
+.d-t-sm{font-family:var(--font-body);font-size:9.5px;fill:var(--muted)}
+.d-t-hl{font-family:var(--font-body);font-weight:600;font-size:11px;fill:var(--gold)}
+.d-box{fill:var(--dark-surface);stroke:var(--line);stroke-width:1}
+.d-panel{fill:#0C1012;stroke:var(--line);stroke-width:1}
+.d-pipe{fill:none;stroke:#3B4A50;stroke-width:1.5;stroke-dasharray:4 7;animation:d-flow 1.9s linear infinite}
+@keyframes d-flow{to{stroke-dashoffset:-22}}
+.d-edge{stroke:#2f6f6a;stroke-width:.9;opacity:.4}
+.d-node{fill:#7FD8C4;animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.21s)}
+.d-node-hl{fill:var(--gold);animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.21s)}
+@keyframes d-glow{0%,100%{opacity:.32}50%{opacity:1}}
+.d-bound{fill:rgba(127,216,196,.03);stroke:#2f6f6a;stroke-width:1.2;stroke-dasharray:6 5}
+.bar{fill:#7FD8C4;transform-box:fill-box;transform-origin:center;transform:scaleY(var(--h,.5));animation:d-bar .95s ease-in-out infinite alternate;animation-delay:calc(var(--i,0)*-.13s)}
+.bar.b2{fill:var(--gold);animation-duration:1.25s;animation-delay:calc(var(--i,0)*-.17s)}
+@keyframes d-bar{from{transform:scaleY(.14)}to{transform:scaleY(1)}}
+
 footer{margin-top:60px;padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
 footer a:hover{color:var(--gold)}
 .foot-cta{font-family:var(--font-heading);font-weight:600;letter-spacing:.04em;color:var(--stone)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -149,6 +182,267 @@ footer a:hover{color:var(--gold)}
     </article>
   </div>
 
+  <div class="sec-label">Built for Myself — Shipped and Running Every Day</div>
+  <div class="grid">
+
+    <article class="card feature">
+      <div class="badges"><span class="badge b-daily">Running daily</span><span class="badge b-advisory">Personal infrastructure</span></div>
+      <h3>SeanOS — Autonomous Second Brain &amp; Operating System</h3>
+      <div class="role">Personal build — Architect &amp; Engineer</div>
+      <div class="feature-body">
+        <div>
+          <p>
+            A markdown-native knowledge and execution system I designed, built, and now run my working life on.
+            Two runtimes share one vault: Claude Code on the Mac does the engineering, and an always-on agent on a
+            Tailscale-sealed VPS runs the daily loop — morning brief, overnight opportunity scouts, an approval queue,
+            an evening reconciliation — with a watchdog that verifies each cycle and self-heals the ones that fail.
+            My only job is to capture. The system does the classifying, filing, linking, and planning.
+          </p>
+          <p>
+            The constraint that shaped it: <strong>every byte is plain Markdown and YAML.</strong> Dashboards, database
+            views, and integrations are a deliberately disposable presentation layer any platform can regenerate, so no
+            proprietary format ever holds the only copy of anything. It is built to survive changing its own app, its own
+            vendor, and its own model.
+          </p>
+          <div class="stack">
+            <span class="chip">Claude Code</span><span class="chip">Multi-agent orchestration</span><span class="chip">Markdown + YAML</span>
+            <span class="chip">Always-on VPS agent</span><span class="chip">Tailscale</span><span class="chip">MCP servers</span>
+            <span class="chip">Obsidian</span><span class="chip">GoHighLevel API</span>
+          </div>
+        </div>
+        <div class="feature-side">
+          <h4>What it does</h4>
+          <ul>
+            <li>Turns transcripts, clips, and raw captures into typed, cross-linked knowledge pages</li>
+            <li>Drafts the day — priorities, the one thing that matters, and an approval queue</li>
+            <li>Overnight scouts work opportunity lanes and report at 06:00</li>
+            <li>122 specialist subagent definitions, routed per task</li>
+            <li>Audits itself: link integrity, stale-belief drift, and knowledge-gap sweeps</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="statstrip">
+        <div class="stat"><div class="stat-n" data-count="687">687</div><div class="stat-l">Knowledge pages</div></div>
+        <div class="stat"><div class="stat-n" data-count="10628">10,628</div><div class="stat-l">Internal links</div></div>
+        <div class="stat"><div class="stat-n" data-count="305">305</div><div class="stat-l">Live execution records</div></div>
+        <div class="stat"><div class="stat-n" data-count="122">122</div><div class="stat-l">Specialist agents</div></div>
+      </div>
+
+      <div class="diagram">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 660 292" role="img" aria-label="SeanOS architecture: four capture sources feed a densely linked knowledge graph, which drives daily execution outputs. Two runtimes, a Mac and an always-on VPS agent, share the one plain-text vault over a Tailscale-sealed link.">
+          <defs>
+            <marker id="arw-s" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <text class="d-lbl" x="60" y="15" text-anchor="middle">CAPTURE</text>
+          <text class="d-lbl" x="290" y="15" text-anchor="middle">KNOWLEDGE GRAPH</text>
+          <text class="d-lbl" x="558" y="15" text-anchor="middle">EXECUTION</text>
+
+          <path class="d-pipe" d="M112 46 C136 46 132 104 150 104" marker-end="url(#arw-s)"/>
+          <path class="d-pipe" d="M112 82 C136 82 132 104 150 104" marker-end="url(#arw-s)"/>
+          <path class="d-pipe" d="M112 118 C136 118 132 104 150 104" marker-end="url(#arw-s)"/>
+          <path class="d-pipe" d="M112 154 C136 154 132 104 150 104" marker-end="url(#arw-s)"/>
+
+          <rect class="d-box" x="8" y="32" width="104" height="28" rx="6"/><text class="d-t" x="60" y="50" text-anchor="middle">Meetings</text>
+          <rect class="d-box" x="8" y="68" width="104" height="28" rx="6"/><text class="d-t" x="60" y="86" text-anchor="middle">Web clips</text>
+          <rect class="d-box" x="8" y="104" width="104" height="28" rx="6"/><text class="d-t" x="60" y="122" text-anchor="middle">Voice notes</text>
+          <rect class="d-box" x="8" y="140" width="104" height="28" rx="6"/><text class="d-t" x="60" y="158" text-anchor="middle">Inbox</text>
+
+          <rect class="d-panel" x="150" y="28" width="280" height="152" rx="10"/>
+
+          <g class="d-edge">
+            <line x1="183" y1="66" x2="216" y2="49"/><line x1="216" y1="49" x2="248" y2="71"/>
+            <line x1="248" y1="71" x2="279" y2="52"/><line x1="279" y1="52" x2="312" y2="64"/>
+            <line x1="312" y1="64" x2="344" y2="46"/><line x1="344" y1="46" x2="376" y2="63"/>
+            <line x1="376" y1="63" x2="405" y2="50"/>
+            <line x1="170" y1="104" x2="203" y2="89"/><line x1="203" y1="89" x2="236" y2="115"/>
+            <line x1="236" y1="115" x2="269" y2="95"/><line x1="269" y1="95" x2="301" y2="110"/>
+            <line x1="301" y1="110" x2="335" y2="90"/><line x1="335" y1="90" x2="367" y2="107"/>
+            <line x1="367" y1="107" x2="400" y2="94"/>
+            <line x1="188" y1="146" x2="225" y2="133"/><line x1="225" y1="133" x2="259" y2="152"/>
+            <line x1="259" y1="152" x2="293" y2="136"/><line x1="293" y1="136" x2="327" y2="150"/>
+            <line x1="327" y1="150" x2="360" y2="133"/><line x1="360" y1="133" x2="395" y2="147"/>
+            <line x1="183" y1="66" x2="170" y2="104"/><line x1="216" y1="49" x2="203" y2="89"/>
+            <line x1="248" y1="71" x2="236" y2="115"/><line x1="279" y1="52" x2="269" y2="95"/>
+            <line x1="344" y1="46" x2="335" y2="90"/><line x1="405" y1="50" x2="400" y2="94"/>
+            <line x1="203" y1="89" x2="188" y2="146"/><line x1="236" y1="115" x2="225" y2="133"/>
+            <line x1="269" y1="95" x2="259" y2="152"/><line x1="301" y1="110" x2="293" y2="136"/>
+            <line x1="367" y1="107" x2="360" y2="133"/><line x1="400" y1="94" x2="395" y2="147"/>
+            <line x1="183" y1="66" x2="301" y2="110"/><line x1="279" y1="52" x2="395" y2="147"/>
+            <line x1="170" y1="104" x2="327" y2="150"/><line x1="376" y1="63" x2="367" y2="107"/>
+          </g>
+
+          <g>
+            <circle class="d-node" style="--i:0" cx="183" cy="66" r="3"/><circle class="d-node" style="--i:1" cx="216" cy="49" r="3"/>
+            <circle class="d-node-hl" style="--i:2" cx="248" cy="71" r="4.5"/><circle class="d-node" style="--i:3" cx="279" cy="52" r="3"/>
+            <circle class="d-node" style="--i:4" cx="312" cy="64" r="3"/><circle class="d-node" style="--i:5" cx="344" cy="46" r="3"/>
+            <circle class="d-node" style="--i:6" cx="376" cy="63" r="3"/><circle class="d-node" style="--i:7" cx="405" cy="50" r="3"/>
+            <circle class="d-node" style="--i:8" cx="170" cy="104" r="3"/><circle class="d-node" style="--i:9" cx="203" cy="89" r="3"/>
+            <circle class="d-node" style="--i:10" cx="236" cy="115" r="3"/><circle class="d-node" style="--i:11" cx="269" cy="95" r="3"/>
+            <circle class="d-node-hl" style="--i:12" cx="301" cy="110" r="4.5"/><circle class="d-node" style="--i:13" cx="335" cy="90" r="3"/>
+            <circle class="d-node" style="--i:14" cx="367" cy="107" r="3"/><circle class="d-node" style="--i:15" cx="400" cy="94" r="3"/>
+            <circle class="d-node" style="--i:16" cx="188" cy="146" r="3"/><circle class="d-node" style="--i:17" cx="225" cy="133" r="3"/>
+            <circle class="d-node" style="--i:18" cx="259" cy="152" r="3"/><circle class="d-node" style="--i:19" cx="293" cy="136" r="3"/>
+            <circle class="d-node" style="--i:20" cx="327" cy="150" r="3"/><circle class="d-node-hl" style="--i:21" cx="360" cy="133" r="4.5"/>
+            <circle class="d-node" style="--i:22" cx="395" cy="147" r="3"/>
+          </g>
+          <text class="d-t-sm" x="290" y="172" text-anchor="middle">687 pages · 10,628 links · 8 typed page kinds</text>
+
+          <path class="d-pipe" d="M430 104 C452 104 448 56 468 56" marker-end="url(#arw-s)"/>
+          <path class="d-pipe" d="M430 104 L468 104" marker-end="url(#arw-s)"/>
+          <path class="d-pipe" d="M430 104 C452 104 448 152 468 152" marker-end="url(#arw-s)"/>
+
+          <rect class="d-box" x="468" y="40" width="180" height="32" rx="6"/><text class="d-t" x="558" y="60" text-anchor="middle">Daily plan + ONE thing</text>
+          <rect class="d-box" x="468" y="88" width="180" height="32" rx="6"/><text class="d-t" x="558" y="108" text-anchor="middle">Approval queue</text>
+          <rect class="d-box" x="468" y="136" width="180" height="32" rx="6"/><text class="d-t" x="558" y="156" text-anchor="middle">06:00 morning brief</text>
+
+          <path class="d-pipe" d="M215 180 L215 214"/>
+          <path class="d-pipe" d="M385 180 L385 214"/>
+          <rect class="d-box" x="140" y="214" width="150" height="40" rx="8"/>
+          <text class="d-t" x="215" y="232" text-anchor="middle">Claude Code · Mac</text>
+          <text class="d-t-sm" x="215" y="246" text-anchor="middle">engineering + build</text>
+          <rect class="d-box" x="310" y="214" width="150" height="40" rx="8"/>
+          <text class="d-t" x="385" y="232" text-anchor="middle">Agent runtime · VPS</text>
+          <text class="d-t-sm" x="385" y="246" text-anchor="middle">always-on daily loop</text>
+          <path class="d-pipe" d="M215 254 L215 268 L385 268 L385 254"/>
+          <text class="d-t-sm" x="300" y="284" text-anchor="middle">Tailscale-sealed · both runtimes, one shared vault</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+        <div class="diagram-cap">Capture is one gesture. Everything downstream — classification, filing, linking, planning — is automated across two runtimes sharing a single plain-text vault.</div>
+      </div>
+
+      <div class="actions">
+        <span class="note-private">Private system — it runs my life, so it isn't public. Architecture walkthrough and live screen-share available on request.</span>
+      </div>
+    </article>
+
+    <article class="card feature">
+      <div class="badges"><span class="badge b-daily">Running daily</span><span class="badge b-prod">On-device</span><span class="badge b-advisory">Swift / macOS</span></div>
+      <h3>quill — On-Device Meeting Intelligence</h3>
+      <div class="role">Personal build — Engineer</div>
+      <div class="feature-body">
+        <div>
+          <p>
+            A native macOS meeting recorder built to replace a cloud notetaker. It captures the microphone and system
+            audio as two independent Core Audio process taps, which yields clean two-party speaker separation for free —
+            <strong>no diarization model, no speaker-ID step.</strong> Transcription runs entirely on-device with Parakeet TDT 0.6B
+            at roughly 20 seconds per hour of audio, and the finished note lands in my vault as plain files.
+          </p>
+          <p>
+            Every load-bearing choice here was measured rather than assumed. Note generation was built first on Apple's
+            on-device model and tested against a real 12,000-word transcript: it inverted speaker attribution and dropped
+            the specifics, so generation routes to Claude and the local model stays as the offline fallback. That single
+            outbound call is pinned to one endpoint on an ephemeral session with redirects refused at the delegate.
+            <strong>The audio itself never leaves the machine.</strong>
+          </p>
+          <div class="stack">
+            <span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Core Audio process taps</span>
+            <span class="chip">Parakeet TDT 0.6B</span><span class="chip">FluidAudio</span><span class="chip">EventKit</span>
+            <span class="chip">Claude API</span><span class="chip">Keychain</span>
+          </div>
+          <p class="demo-hint">Built on an MIT-licensed capture core (digimata/quill). The meeting app, calendar layer, note pipeline, voice-note pipeline, and vault integration are mine.</p>
+        </div>
+        <div class="feature-side">
+          <h4>Engineering decisions</h4>
+          <ul>
+            <li>SwiftUI over Electron — ~90 MB resident, against 300–600 MB plus a multi-GB bundled model</li>
+            <li>Two-track capture replaces a diarization model outright</li>
+            <li>Plain files, no database — every note stays readable without the app</li>
+            <li>Isolation is structural, not a guard: separate storage roots make cross-contamination unrepresentable</li>
+            <li>Hardened runtime, stable signing identity, config refused unless user-owned</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="statstrip">
+        <div class="stat"><div class="stat-n" data-count="8800">8,800</div><div class="stat-l">Lines of Swift</div></div>
+        <div class="stat"><div class="stat-n" data-count="90">90</div><div class="stat-l">MB resident memory</div></div>
+        <div class="stat"><div class="stat-n"><span data-count="20">20</span><span class="unit">sec</span></div><div class="stat-l">To transcribe an hour</div></div>
+        <div class="stat"><div class="stat-n" data-count="0">0</div><div class="stat-l">Bytes of audio off-device</div></div>
+      </div>
+
+      <div class="diagram">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 660 250" role="img" aria-label="quill pipeline: microphone and system audio are captured as two separate tracks, transcribed on-device by Parakeet into a speaker-tagged transcript. All of that stays inside a boundary marked this machine. Only the text transcript crosses out, to a single pinned Claude endpoint for note generation.">
+          <defs>
+            <marker id="arw-q" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <rect class="d-bound" x="6" y="34" width="474" height="178" rx="12"/>
+          <text class="d-lbl" x="20" y="52">THIS MACHINE</text>
+
+          <rect class="d-box" x="20" y="64" width="120" height="48" rx="7"/>
+          <text class="d-t-sm" x="30" y="79">Mic track</text>
+          <g>
+            <rect class="bar" style="--i:0;--h:.35" x="30" y="84" width="3" height="24"/><rect class="bar" style="--i:1;--h:.7" x="36" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:2;--h:.45" x="42" y="84" width="3" height="24"/><rect class="bar" style="--i:3;--h:.9" x="48" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:4;--h:.55" x="54" y="84" width="3" height="24"/><rect class="bar" style="--i:5;--h:.3" x="60" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:6;--h:.75" x="66" y="84" width="3" height="24"/><rect class="bar" style="--i:7;--h:1" x="72" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:8;--h:.6" x="78" y="84" width="3" height="24"/><rect class="bar" style="--i:9;--h:.4" x="84" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:10;--h:.85" x="90" y="84" width="3" height="24"/><rect class="bar" style="--i:11;--h:.5" x="96" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:12;--h:.28" x="102" y="84" width="3" height="24"/><rect class="bar" style="--i:13;--h:.65" x="108" y="84" width="3" height="24"/>
+            <rect class="bar" style="--i:14;--h:.42" x="114" y="84" width="3" height="24"/><rect class="bar" style="--i:15;--h:.8" x="120" y="84" width="3" height="24"/>
+          </g>
+
+          <rect class="d-box" x="20" y="126" width="120" height="48" rx="7"/>
+          <text class="d-t-sm" x="30" y="141">System audio track</text>
+          <g>
+            <rect class="bar b2" style="--i:0;--h:.8" x="30" y="146" width="3" height="24"/><rect class="bar b2" style="--i:1;--h:.4" x="36" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:2;--h:.95" x="42" y="146" width="3" height="24"/><rect class="bar b2" style="--i:3;--h:.5" x="48" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:4;--h:.3" x="54" y="146" width="3" height="24"/><rect class="bar b2" style="--i:5;--h:.7" x="60" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:6;--h:.45" x="66" y="146" width="3" height="24"/><rect class="bar b2" style="--i:7;--h:.6" x="72" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:8;--h:.9" x="78" y="146" width="3" height="24"/><rect class="bar b2" style="--i:9;--h:.35" x="84" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:10;--h:.55" x="90" y="146" width="3" height="24"/><rect class="bar b2" style="--i:11;--h:.75" x="96" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:12;--h:.48" x="102" y="146" width="3" height="24"/><rect class="bar b2" style="--i:13;--h:.32" x="108" y="146" width="3" height="24"/>
+            <rect class="bar b2" style="--i:14;--h:.85" x="114" y="146" width="3" height="24"/><rect class="bar b2" style="--i:15;--h:.52" x="120" y="146" width="3" height="24"/>
+          </g>
+
+          <path class="d-pipe" d="M140 96 C166 96 168 122 190 122" marker-end="url(#arw-q)"/>
+          <path class="d-pipe" d="M140 158 C166 158 168 122 190 122" marker-end="url(#arw-q)"/>
+
+          <rect class="d-box" x="190" y="88" width="130" height="68" rx="7"/>
+          <text class="d-t" x="255" y="112" text-anchor="middle">Parakeet TDT 0.6B</text>
+          <text class="d-t-sm" x="255" y="128" text-anchor="middle">on-device ASR</text>
+          <text class="d-t-hl" x="255" y="144" text-anchor="middle">~20s per hour</text>
+
+          <path class="d-pipe" d="M320 122 L356 122" marker-end="url(#arw-q)"/>
+
+          <rect class="d-box" x="356" y="88" width="112" height="68" rx="7"/>
+          <text class="d-t" x="412" y="114" text-anchor="middle">Speaker-tagged</text>
+          <text class="d-t" x="412" y="130" text-anchor="middle">transcript</text>
+          <text class="d-t-sm" x="412" y="146" text-anchor="middle">me vs. them</text>
+
+          <path class="d-pipe" d="M468 122 L520 122" marker-end="url(#arw-q)"/>
+          <text class="d-t-sm" x="494" y="112" text-anchor="middle">text</text>
+
+          <rect class="d-box" x="520" y="94" width="128" height="56" rx="7"/>
+          <text class="d-t" x="584" y="118" text-anchor="middle">Claude Haiku 4.5</text>
+          <text class="d-t-sm" x="584" y="134" text-anchor="middle">note generation</text>
+          <text class="d-t-sm" x="584" y="168" text-anchor="middle">one pinned endpoint</text>
+          <text class="d-t-sm" x="584" y="181" text-anchor="middle">redirects refused</text>
+          <text class="d-t-sm" x="584" y="194" text-anchor="middle">offline fallback available</text>
+
+          <text class="d-t-hl" x="243" y="232" text-anchor="middle">Capture and transcription never cross this boundary</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+        <div class="diagram-cap">Two tracks in, one speaker-separated transcript out, all of it on the machine. The only outbound call carries text — and only to a single pinned endpoint.</div>
+      </div>
+
+      <div class="actions">
+        <span class="note-private">Personal tool, not a public download — walkthrough and live demo on request.</span>
+      </div>
+    </article>
+
+  </div>
+
   <div class="sec-label">Live Demos — Open in Your Browser</div>
   <div class="grid">
 
@@ -211,6 +505,42 @@ footer a:hover{color:var(--gold)}
   <span class="foot-cta">Let's talk — <a href="mailto:sean@halandigital.com">sean@halandigital.com</a></span>
   <span>© 2026 Sean Cook · Halan Digital · Frisco, TX</span>
 </footer>
+
+<script>
+// Count-up on the stat strips. Numbers are already in the HTML, so this is
+// pure enhancement — no JS, no IntersectionObserver, or reduced motion all
+// leave the final figure on screen.
+(function () {
+  var els = document.querySelectorAll('[data-count]');
+  if (!els.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function run(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target) || target === 0) return;
+    var start = null, dur = 1100;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = '0';
+    requestAnimationFrame(step);
+  }
+
+  if (reduce || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
+
+  var io = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) { run(entries[i].target); io.unobserve(entries[i].target); }
+    }
+  }, { threshold: 0.4 });
+
+  for (var i = 0; i < els.length; i++) io.observe(els[i]);
+})();
+</script>
 
 </body>
 </html>
