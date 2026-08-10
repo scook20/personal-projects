@@ -93,8 +93,29 @@ header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
 .diagram-scroll{overflow-x:auto;min-width:0;-webkit-overflow-scrolling:touch}
 .diagram-scroll svg{display:block;width:100%;height:auto;min-width:600px}
 .diagram-cap{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
+.diagram.compact .diagram-scroll svg{min-width:320px}
+/* Compact diagrams render smaller, so their type is set larger in user units
+   to survive the downscale. */
+.diagram.compact .d-t{font-size:12px}
+.diagram.compact .d-t-sm{font-size:10.5px}
+.diagram.compact .d-t-hl{font-size:12px}
+.diagram.compact .d-lbl{font-size:11px}
 .scroll-hint{display:none;margin-top:9px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:center}
-@media(max-width:660px){.scroll-hint{display:block}}
+.scroll-hint.on{display:block}
+.d-lbl-hl{font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.16em;fill:var(--gold)}
+.d-big{font-family:var(--font-heading);font-weight:700;font-size:17px;fill:var(--gold)}
+.d-chip{fill:rgba(255,255,255,.04);stroke:var(--line);stroke-width:1}
+.d-axis{stroke:#2A3438;stroke-width:1;fill:none}
+.d-mark{fill:#7FD8C4}
+.d-fit{stroke:var(--gold);stroke-width:2;fill:none;stroke-linecap:round}
+.d-slot{fill:#7FD8C4;opacity:.85;animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.26s)}
+.d-seg{stroke:none}
+.d-seg1{fill:#7FD8C4;opacity:.3}
+.d-seg2{fill:#7FD8C4;opacity:.6}
+.d-seg3{fill:#7FD8C4;opacity:1}
+.d-drag{animation:d-drag 3.4s ease-in-out infinite}
+@keyframes d-drag{0%,12%{transform:translate(0,0) rotate(0deg)}45%,62%{transform:translate(100px,-4px) rotate(-4deg)}92%,100%{transform:translate(0,0) rotate(0deg)}}
+.d-drop{animation:d-glow 3.4s ease-in-out infinite;animation-delay:-1.2s}
 .d-lbl{font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.16em;fill:var(--muted)}
 .d-t{font-family:var(--font-body);font-weight:500;font-size:11px;fill:#CDD4D4}
 .d-t-sm{font-family:var(--font-body);font-size:9.5px;fill:var(--muted)}
@@ -176,6 +197,68 @@ footer a:hover{color:var(--gold)}
           </ul>
         </div>
       </div>
+      <div class="diagram">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 660 250" role="img" aria-label="Recruiting pipeline: an application flows through AI resume screening, an async voice interview, speech and content scoring, and a scored routing decision, with no human touch on the happy path. Below, each LLM call is routed across a fast, mid, or frontier model tier for a 6.5 times cost reduction, alongside the reliability measures.">
+          <defs>
+            <marker id="arw-r" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <text class="d-lbl-hl" x="330" y="13" text-anchor="middle">NO HUMAN TOUCH ON THE HAPPY PATH</text>
+          <path d="M10 27 L10 21 L650 21 L650 27" fill="none" stroke="#6b5a35" stroke-width="1"/>
+
+          <rect class="d-box" x="10" y="34" width="112" height="56" rx="7"/>
+          <text class="d-t" x="66" y="58" text-anchor="middle">Application</text>
+          <text class="d-t-sm" x="66" y="74" text-anchor="middle">inbound</text>
+          <rect class="d-box" x="142" y="34" width="112" height="56" rx="7"/>
+          <text class="d-t" x="198" y="58" text-anchor="middle">AI résumé</text>
+          <text class="d-t-sm" x="198" y="74" text-anchor="middle">screen vs. JD</text>
+          <rect class="d-box" x="274" y="34" width="112" height="56" rx="7"/>
+          <text class="d-t" x="330" y="58" text-anchor="middle">Async voice</text>
+          <text class="d-t-sm" x="330" y="74" text-anchor="middle">interview</text>
+          <rect class="d-box" x="406" y="34" width="112" height="56" rx="7"/>
+          <text class="d-t" x="462" y="58" text-anchor="middle">Speech +</text>
+          <text class="d-t-sm" x="462" y="74" text-anchor="middle">content scoring</text>
+          <rect class="d-box" x="538" y="34" width="112" height="56" rx="7"/>
+          <text class="d-t" x="594" y="58" text-anchor="middle">Scored routing</text>
+          <text class="d-t-sm" x="594" y="74" text-anchor="middle">decision</text>
+
+          <path class="d-pipe" d="M122 62 L142 62" marker-end="url(#arw-r)"/>
+          <path class="d-pipe" d="M254 62 L274 62" marker-end="url(#arw-r)"/>
+          <path class="d-pipe" d="M386 62 L406 62" marker-end="url(#arw-r)"/>
+          <path class="d-pipe" d="M518 62 L538 62" marker-end="url(#arw-r)"/>
+
+          <rect class="d-panel" x="10" y="112" width="310" height="118" rx="9"/>
+          <text class="d-lbl" x="24" y="131">MODEL-TIER ROUTING</text>
+          <rect class="d-box" x="100" y="138" width="120" height="26" rx="6"/>
+          <text class="d-t-sm" x="160" y="155" text-anchor="middle">Each LLM call</text>
+          <path class="d-pipe" d="M160 164 C160 173 65 171 65 180" marker-end="url(#arw-r)"/>
+          <path class="d-pipe" d="M160 164 L160 180" marker-end="url(#arw-r)"/>
+          <path class="d-pipe" d="M160 164 C160 173 255 171 255 180" marker-end="url(#arw-r)"/>
+          <rect class="d-chip" x="22" y="182" width="86" height="24" rx="5"/>
+          <text class="d-t-sm" x="65" y="198" text-anchor="middle">Fast tier</text>
+          <rect class="d-chip" x="118" y="182" width="86" height="24" rx="5"/>
+          <text class="d-t-sm" x="161" y="198" text-anchor="middle">Mid tier</text>
+          <rect class="d-chip" x="212" y="182" width="86" height="24" rx="5"/>
+          <text class="d-t-sm" x="255" y="198" text-anchor="middle">Frontier tier</text>
+          <text class="d-t-hl" x="160" y="223" text-anchor="middle">6.5× cost reduction</text>
+
+          <rect class="d-panel" x="330" y="112" width="320" height="118" rx="9"/>
+          <text class="d-lbl" x="344" y="131">RELIABILITY</text>
+          <circle class="d-mark" cx="350" cy="149" r="3"/><text class="d-t-sm" x="362" y="153">6 orchestrated workflows</text>
+          <circle class="d-mark" cx="350" cy="171" r="3"/><text class="d-t-sm" x="362" y="175">Retry + backoff on every step</text>
+          <circle class="d-mark" cx="350" cy="193" r="3"/><text class="d-t-sm" x="362" y="197">Zero-silent-failure error handling</text>
+          <circle class="d-mark" cx="350" cy="215" r="3"/><text class="d-t-sm" x="362" y="219">~1,800 automated test assertions</text>
+
+          <text class="d-t-hl" x="330" y="245" text-anchor="middle">~$0.02 per candidate screened · built directly into the firm's own ATS</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+        <div class="diagram-cap">Application to hiring decision with no human in the loop. Cost control is the routing layer: every model call goes to the cheapest tier that can do the job.</div>
+      </div>
+
       <div class="actions">
         <span class="note-private">Internal production system — live walkthrough available on request.</span>
       </div>
@@ -452,6 +535,40 @@ footer a:hover{color:var(--gold)}
       <div class="role">REI Summit 2026 — Designer &amp; Builder</div>
       <p>An agentic operating-system dashboard fronting <strong>6 specialized AI agents</strong> for real estate investors — portfolio, deal sourcing, rehab, maintenance, tax, and lead reactivation — with a CEO-level orchestrator agent. Demoed live at a national industry summit.</p>
       <div class="stack"><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">OpenRouter LLMs</span><span class="chip">Tailwind</span><span class="chip">Vercel</span></div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 216" role="img" aria-label="A CEO-level orchestrator agent sits at the centre and delegates to six specialised agents: portfolio, deal sourcing, rehab, maintenance, tax, and lead reactivation.">
+          <defs>
+            <marker id="arw-e" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <text class="d-lbl" x="210" y="13" text-anchor="middle">SIX AGENTS, ONE ORCHESTRATOR</text>
+
+          <path class="d-pipe" d="M160 108 C146 108 146 42 130 42" marker-end="url(#arw-e)"/>
+          <path class="d-pipe" d="M160 108 L130 108" marker-end="url(#arw-e)"/>
+          <path class="d-pipe" d="M160 108 C146 108 146 174 130 174" marker-end="url(#arw-e)"/>
+          <path class="d-pipe" d="M260 108 C276 108 276 42 290 42" marker-end="url(#arw-e)"/>
+          <path class="d-pipe" d="M260 108 L290 108" marker-end="url(#arw-e)"/>
+          <path class="d-pipe" d="M260 108 C276 108 276 174 290 174" marker-end="url(#arw-e)"/>
+
+          <rect class="d-box" x="6" y="26" width="124" height="32" rx="6"/><text class="d-t" x="68" y="46" text-anchor="middle">Portfolio</text>
+          <rect class="d-box" x="6" y="92" width="124" height="32" rx="6"/><text class="d-t" x="68" y="112" text-anchor="middle">Deal sourcing</text>
+          <rect class="d-box" x="6" y="158" width="124" height="32" rx="6"/><text class="d-t" x="68" y="178" text-anchor="middle">Rehab</text>
+          <rect class="d-box" x="290" y="26" width="124" height="32" rx="6"/><text class="d-t" x="352" y="46" text-anchor="middle">Maintenance</text>
+          <rect class="d-box" x="290" y="92" width="124" height="32" rx="6"/><text class="d-t" x="352" y="112" text-anchor="middle">Tax</text>
+          <rect class="d-box" x="290" y="158" width="124" height="32" rx="6"/><text class="d-t" x="352" y="178" text-anchor="middle">Lead reactivation</text>
+
+          <rect x="160" y="90" width="100" height="36" rx="8" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
+          <text class="d-t-hl" x="210" y="106" text-anchor="middle">CEO-level</text>
+          <text class="d-t-hl" x="210" y="119" text-anchor="middle">orchestrator</text>
+
+          <text class="d-t-sm" x="210" y="208" text-anchor="middle">Each agent owns a domain; the orchestrator routes and reconciles.</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
       <div class="actions"><a class="btn" href="https://client-rei-summit-command-center.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
     </article>
 
@@ -461,6 +578,45 @@ footer a:hover{color:var(--gold)}
       <div class="role">Halan Digital — AI Governance Build</div>
       <p>A self-serve readiness platform for the Texas Responsible AI Governance Act: a <strong>10-question weighted assessment</strong> that returns an exposure tier, the top-3 NIST AI RMF controls, and sector-specific exposure points. Productized AI governance as a conversion engine.</p>
       <div class="stack"><span class="chip">NIST AI RMF</span><span class="chip">Vanilla JS</span><span class="chip">PDF pipeline</span><span class="chip">Vercel</span></div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 194" role="img" aria-label="Ten weighted questions are scored onto a three-band exposure tier scale of low, moderate and high, which returns the top three NIST AI RMF controls and sector-specific exposure points.">
+          <text class="d-lbl" x="210" y="13" text-anchor="middle">WEIGHTED ASSESSMENT → EXPOSURE TIER</text>
+
+          <g>
+            <rect class="d-slot" style="--i:0" x="34" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:1" x="70" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:2" x="106" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:3" x="142" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:4" x="178" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:5" x="214" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:6" x="250" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:7" x="286" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:8" x="322" y="26" width="28" height="9" rx="3"/>
+            <rect class="d-slot" style="--i:9" x="358" y="26" width="28" height="9" rx="3"/>
+          </g>
+          <text class="d-t-sm" x="210" y="50" text-anchor="middle">10 weighted questions</text>
+
+          <path d="M204 62 L216 62 L210 72 z" fill="#C5A059"/>
+          <rect class="d-seg d-seg1" x="40" y="76" width="110" height="16" rx="4"/>
+          <rect class="d-seg d-seg2" x="154" y="76" width="110" height="16" rx="4"/>
+          <rect class="d-seg d-seg3" x="268" y="76" width="112" height="16" rx="4"/>
+          <text class="d-t-sm" x="95" y="106" text-anchor="middle">Low</text>
+          <text class="d-t-sm" x="209" y="106" text-anchor="middle">Moderate</text>
+          <text class="d-t-sm" x="324" y="106" text-anchor="middle">High</text>
+
+          <rect class="d-box" x="26" y="120" width="180" height="34" rx="6"/>
+          <text class="d-t" x="116" y="135" text-anchor="middle">Top-3 NIST AI RMF</text>
+          <text class="d-t" x="116" y="148" text-anchor="middle">controls</text>
+          <rect class="d-box" x="214" y="120" width="180" height="34" rx="6"/>
+          <text class="d-t" x="304" y="135" text-anchor="middle">Sector-specific</text>
+          <text class="d-t" x="304" y="148" text-anchor="middle">exposure points</text>
+
+          <text class="d-t-sm" x="210" y="180" text-anchor="middle">Ten questions in, a ranked remediation path out.</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
       <div class="actions"><a class="btn" href="https://traiga-readiness.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
     </article>
 
@@ -471,6 +627,43 @@ footer a:hover{color:var(--gold)}
       <p>A paid AI/automation operations audit with a 5-stage n8n architecture and a defensible three-scenario ROI model proving <strong>$12.9K–$49K net annual benefit</strong> (6–20 month payback). Shipped with an interactive decision companion.</p>
       <div class="metric"><span>$12.9K–$49K</span> modeled net annual benefit</div>
       <div class="stack"><span class="chip">n8n</span><span class="chip">ROI modeling</span><span class="chip">Process architecture</span><span class="chip">Vercel</span></div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 196" role="img" aria-label="A five-stage n8n automation architecture feeds a three-scenario ROI model, which returns a modeled net annual benefit of 12.9 to 49 thousand dollars and a payback period of 6 to 20 months.">
+          <defs>
+            <marker id="arw-c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <text class="d-lbl" x="210" y="13" text-anchor="middle">FIVE-STAGE n8n ARCHITECTURE</text>
+
+          <rect class="d-box" x="42" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="70" y="44" text-anchor="middle">01</text>
+          <rect class="d-box" x="112" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="140" y="44" text-anchor="middle">02</text>
+          <rect class="d-box" x="182" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="210" y="44" text-anchor="middle">03</text>
+          <rect class="d-box" x="252" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="280" y="44" text-anchor="middle">04</text>
+          <rect class="d-box" x="322" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="350" y="44" text-anchor="middle">05</text>
+          <path class="d-pipe" d="M98 40 L112 40" marker-end="url(#arw-c)"/>
+          <path class="d-pipe" d="M168 40 L182 40" marker-end="url(#arw-c)"/>
+          <path class="d-pipe" d="M238 40 L252 40" marker-end="url(#arw-c)"/>
+          <path class="d-pipe" d="M308 40 L322 40" marker-end="url(#arw-c)"/>
+
+          <text class="d-lbl" x="210" y="80" text-anchor="middle">THREE-SCENARIO ROI MODEL</text>
+
+          <rect class="d-panel" x="14" y="90" width="190" height="56" rx="8"/>
+          <text class="d-big" x="109" y="118" text-anchor="middle">$12.9K–$49K</text>
+          <text class="d-t-sm" x="109" y="134" text-anchor="middle">modeled net annual benefit</text>
+
+          <rect class="d-panel" x="216" y="90" width="190" height="56" rx="8"/>
+          <text class="d-big" x="311" y="118" text-anchor="middle">6–20 months</text>
+          <text class="d-t-sm" x="311" y="134" text-anchor="middle">payback period</text>
+
+          <text class="d-t-sm" x="210" y="172" text-anchor="middle">Conservative, base, and upside cases — the range is the deliverable,</text>
+          <text class="d-t-sm" x="210" y="186" text-anchor="middle">not a single flattering number.</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
       <div class="actions"><a class="btn" href="https://celestial-audit-companion.vercel.app" target="_blank" rel="noopener">View companion <span class="arrow">→</span></a></div>
     </article>
 
@@ -485,6 +678,46 @@ footer a:hover{color:var(--gold)}
       <div class="role">Scale Virtually — Builder</div>
       <p>A 44-page multi-tenant HR &amp; recruiting platform — drag-and-drop ATS pipeline, HR module, time &amp; attendance — with <strong>GPT-4o</strong> job-description generation, résumé parsing, and candidate matching.</p>
       <div class="stack"><span class="chip">Next.js</span><span class="chip">Prisma</span><span class="chip">Supabase</span><span class="chip">Stripe</span><span class="chip">GPT-4o</span></div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 196" role="img" aria-label="A drag-and-drop applicant tracking board with four stages — applied, screen, interview and offer — where a candidate card moves between columns. Underneath, three AI features: job description generation, resume parsing, and candidate matching.">
+          <text class="d-lbl" x="210" y="13" text-anchor="middle">DRAG-AND-DROP ATS PIPELINE</text>
+
+          <rect class="d-panel" x="10" y="22" width="92" height="112" rx="7"/>
+          <text class="d-t-sm" x="56" y="38" text-anchor="middle">Applied</text>
+          <rect class="d-chip" x="18" y="46" width="76" height="16" rx="4"/>
+          <rect class="d-chip" x="18" y="68" width="76" height="16" rx="4"/>
+          <rect class="d-chip" x="18" y="90" width="76" height="16" rx="4"/>
+
+          <rect class="d-panel" x="110" y="22" width="92" height="112" rx="7"/>
+          <text class="d-t-sm" x="156" y="38" text-anchor="middle">Screen</text>
+          <rect class="d-chip" x="118" y="46" width="76" height="16" rx="4"/>
+
+          <rect class="d-panel" x="210" y="22" width="92" height="112" rx="7"/>
+          <text class="d-t-sm" x="256" y="38" text-anchor="middle">Interview</text>
+          <rect class="d-drop" x="218" y="68" width="76" height="16" rx="4" fill="none" stroke="#C5A059" stroke-width="1" stroke-dasharray="4 3"/>
+          <rect class="d-chip" x="218" y="90" width="76" height="16" rx="4"/>
+
+          <rect class="d-panel" x="310" y="22" width="92" height="112" rx="7"/>
+          <text class="d-t-sm" x="356" y="38" text-anchor="middle">Offer</text>
+          <rect class="d-chip" x="318" y="46" width="76" height="16" rx="4"/>
+
+          <g class="d-drag" style="transform-box:fill-box;transform-origin:center">
+            <rect x="118" y="68" width="76" height="16" rx="4" fill="rgba(197,160,89,.2)" stroke="var(--gold)" stroke-width="1"/>
+          </g>
+
+          <rect class="d-chip" x="8" y="146" width="128" height="24" rx="5"/>
+          <text class="d-t-sm" x="72" y="162" text-anchor="middle">GPT-4o JD generation</text>
+          <rect class="d-chip" x="146" y="146" width="128" height="24" rx="5"/>
+          <text class="d-t-sm" x="210" y="162" text-anchor="middle">Résumé parsing</text>
+          <rect class="d-chip" x="284" y="146" width="128" height="24" rx="5"/>
+          <text class="d-t-sm" x="348" y="162" text-anchor="middle">Candidate matching</text>
+
+          <text class="d-t-sm" x="210" y="188" text-anchor="middle">44 pages · multi-tenant · HR and time &amp; attendance modules</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
       <div class="actions"><a class="btn" href="https://client-scale-virtually-workable-clo.vercel.app/overview" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
     </article>
 
@@ -494,6 +727,58 @@ footer a:hover{color:var(--gold)}
       <div class="role">Scale Virtually — Builder</div>
       <p>A 27-page investor SaaS platform featuring a proprietary <strong>8-factor Deal Score</strong> algorithm and an OLS-regression CMA tool with flip detection and contract generation.</p>
       <div class="stack"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase / PostGIS</span><span class="chip">Mapbox</span><span class="chip">Recharts</span></div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 196" role="img" aria-label="Two mechanisms side by side: eight weighted factors combine into a single composite deal score, and an ordinary-least-squares regression fits a line through comparable sales to produce a valuation.">
+          <defs>
+            <marker id="arw-i" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
+            </marker>
+          </defs>
+
+          <text class="d-lbl" x="100" y="13" text-anchor="middle">8-FACTOR DEAL SCORE</text>
+          <text class="d-lbl" x="320" y="13" text-anchor="middle">OLS-REGRESSION CMA</text>
+
+          <g>
+            <rect class="d-slot" style="--i:0" x="14" y="30" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:1" x="14" y="42" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:2" x="14" y="54" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:3" x="14" y="66" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:4" x="14" y="78" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:5" x="14" y="90" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:6" x="14" y="102" width="56" height="7" rx="3"/>
+            <rect class="d-slot" style="--i:7" x="14" y="114" width="56" height="7" rx="3"/>
+          </g>
+          <text class="d-t-sm" x="14" y="136">8 weighted factors</text>
+
+          <path class="d-pipe" d="M70 34 C92 34 92 76 108 76"/>
+          <path class="d-pipe" d="M70 76 L108 76" marker-end="url(#arw-i)"/>
+          <path class="d-pipe" d="M70 118 C92 118 92 76 108 76"/>
+
+          <rect x="108" y="58" width="82" height="36" rx="8" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
+          <text class="d-t-hl" x="149" y="74" text-anchor="middle">Composite</text>
+          <text class="d-t-hl" x="149" y="87" text-anchor="middle">deal score</text>
+
+          <path class="d-axis" d="M232 26 L232 126 L410 126"/>
+          <path class="d-fit" d="M240 116 L402 44"/>
+          <g class="d-mark">
+            <circle cx="248" cy="112" r="3.5"/><circle cx="262" cy="103" r="3.5"/><circle cx="276" cy="108" r="3.5"/>
+            <circle cx="290" cy="95" r="3.5"/><circle cx="304" cy="90" r="3.5"/><circle cx="318" cy="96" r="3.5"/>
+            <circle cx="332" cy="81" r="3.5"/><circle cx="346" cy="75" r="3.5"/><circle cx="360" cy="83" r="3.5"/>
+            <circle cx="374" cy="64" r="3.5"/><circle cx="388" cy="57" r="3.5"/><circle cx="400" cy="50" r="3.5"/>
+          </g>
+          <text class="d-t-sm" x="321" y="140" text-anchor="middle">comparable sales → fitted valuation</text>
+
+          <rect class="d-chip" x="60" y="152" width="140" height="24" rx="5"/>
+          <text class="d-t-sm" x="130" y="168" text-anchor="middle">Flip detection</text>
+          <rect class="d-chip" x="220" y="152" width="140" height="24" rx="5"/>
+          <text class="d-t-sm" x="290" y="168" text-anchor="middle">Contract generation</text>
+
+          <text class="d-t-sm" x="210" y="190" text-anchor="middle">27 pages · PostGIS + Mapbox geospatial layer</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
       <div class="actions"><a class="btn" href="https://client-scale-virtually-website-clon.vercel.app" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
     </article>
 
@@ -539,6 +824,23 @@ footer a:hover{color:var(--gold)}
   }, { threshold: 0.4 });
 
   for (var i = 0; i < els.length; i++) io.observe(els[i]);
+})();
+
+// Show a diagram's "scroll sideways" hint only when it actually overflows.
+(function () {
+  var boxes = document.querySelectorAll('.diagram-scroll');
+  if (!boxes.length) return;
+  function sync() {
+    for (var i = 0; i < boxes.length; i++) {
+      var hint = boxes[i].parentNode.querySelector('.scroll-hint');
+      if (!hint) continue;
+      if (boxes[i].scrollWidth - boxes[i].clientWidth > 4) hint.classList.add('on');
+      else hint.classList.remove('on');
+    }
+  }
+  sync();
+  window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
 })();
 </script>
 
