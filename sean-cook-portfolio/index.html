@@ -259,6 +259,64 @@ footer a:hover{color:var(--gold)}
     </article>
   </div>
 
+
+  <div class="sec-label">Client Systems — Integration Engineering</div>
+  <div class="grid">
+
+    <article class="card">
+      <div class="badges"><span class="badge b-live">Built &amp; tested</span><span class="badge b-advisory">Voice AI</span><span class="badge b-advisory">Client go-live pending</span></div>
+      <h3>Voice Agent for Field Service Close-Out</h3>
+      <div class="role">Commercial services contractor — via partner engagement</div>
+      <p>
+        When a technician finishes a job, the billing team has to chase them by phone for the handful of details
+        an invoice needs. This calls the tech instead. The agent asks a fixed set of questions, and the answers
+        come back mid-call as structured data, land in the job record in the company's ERP, and flag the ones
+        that need a human.
+      </p>
+      <p>
+        The hard part was writing into a system that already holds real people's work. The ERP only accepts a
+        whole-note overwrite, and roughly a third of those notes already had a biller's own writing in them.
+        So it <strong>reads the note first, prepends to it, and refuses to write at all if that read fails</strong>
+        — an automation that can silently destroy someone's work is worse than no automation.
+      </p>
+      <div class="stack">
+        <span class="chip">n8n orchestration</span><span class="chip">Voice AI agent</span><span class="chip">ERP REST API</span>
+        <span class="chip">Webhook tooling</span><span class="chip">Python test harness</span>
+      </div>
+      <div class="metric"><span>3</span> orchestrated workflows &nbsp;·&nbsp; <span>180+</span> automated checks, including live writes against a real ERP sandbox</div>
+      <div class="diagram compact">
+        <div class="diagram-scroll">
+        <svg viewBox="0 0 420 250" role="img" aria-label="A five-step pipeline: a job closes in the ERP, a queue is built with filtering, de-duplication and a forty-eight hour age cap, a voice agent calls the technician, seven structured answers return mid-call, and the system reads the existing job note, prepends to it and writes it back, refusing to write if the read fails.">
+          <text class="d-lbl-hl" x="210" y="13" text-anchor="middle">NOBODY CHASES THE TECHNICIAN BY PHONE</text>
+
+          <rect class="d-box" x="40" y="26" width="340" height="26" rx="6"/>
+          <text class="d-t" x="210" y="43" text-anchor="middle">Job closes in the ERP</text>
+          <path class="d-chev" style="--i:0" d="M203 55 L210 60 L217 55"/>
+          <rect class="d-box" x="50" y="62" width="320" height="26" rx="6"/>
+          <text class="d-t" x="210" y="79" text-anchor="middle">Queue built: filtered, de-duped, 48-hour age cap</text>
+          <path class="d-chev" style="--i:1" d="M203 91 L210 96 L217 91"/>
+          <rect class="d-box" x="60" y="98" width="300" height="26" rx="6"/>
+          <text class="d-t" x="210" y="115" text-anchor="middle">Voice agent calls the technician</text>
+          <path class="d-chev" style="--i:2" d="M203 127 L210 132 L217 127"/>
+          <rect class="d-box" x="70" y="134" width="280" height="26" rx="6"/>
+          <text class="d-t" x="210" y="151" text-anchor="middle">7 structured answers return mid-call</text>
+          <path class="d-chev" style="--i:3" d="M203 163 L210 168 L217 163"/>
+          <rect x="80" y="170" width="260" height="26" rx="6" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
+          <text class="d-t-hl" x="210" y="187" text-anchor="middle">Read → prepend → write back</text>
+
+          <text class="d-t-sm" x="210" y="214" text-anchor="middle">Anything the call could not confirm is flagged for a human</text>
+          <text class="d-t-sm" x="210" y="228" text-anchor="middle">instead of guessed. If the read fails, nothing is written —</text>
+          <text class="d-t-sm" x="210" y="242" text-anchor="middle">a biller's own notes are never overwritten.</text>
+        </svg>
+        </div>
+        <div class="scroll-hint">Scroll the diagram sideways →</div>
+      </div>
+      <div class="actions">
+        <span class="note-private">Client system — anonymized at the client's discretion; walkthrough available on request.</span>
+      </div>
+    </article>
+
+  </div>
   <div class="sec-label">Built for Myself — Shipped and Running Every Day</div>
   <div class="grid">
 
