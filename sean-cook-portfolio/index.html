@@ -9,797 +9,694 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://work.halandigital.com">
 <title>Sean Cook — Selected Projects</title>
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
 <style>
-:root{
-  --dark-slate:#0F1315; --dark-surface:#182023; --gold:#C5A059;
-  --stone:#F5F5F0; --teal:#0B4F55; --muted:#9AA3A5; --line:#2A3438;
-  --font-heading:'Oswald',system-ui,sans-serif; --font-body:'Manrope',system-ui,sans-serif;
-  --radius:14px; --radius-sm:8px; --max:1080px;
+body{margin:0;background:#FAF8F4}
+a{color:#0F4C4F}a:hover{color:#0A3A3C}
+.d-lbl{font-family:Inter,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.16em;fill:#625F57}
+.d-lbl-hl{font-family:Inter,sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.16em;fill:#0F4C4F}
+.d-t{font-family:Inter,sans-serif;font-weight:500;font-size:12px;fill:#1A1916}
+.d-t-sm{font-family:Inter,sans-serif;font-size:10.5px;fill:#625F57}
+.d-t-hl{font-family:Inter,sans-serif;font-weight:600;font-size:12px;fill:#0F4C4F}
+.d-big{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:20px;fill:#0F4C4F}
+.d-box{fill:#FAF8F4;stroke:#CFC7B9;stroke-width:1}
+.d-panel{fill:#F2EEE6;stroke:#DDD6CA;stroke-width:1}
+.d-chip{fill:#F2EEE6;stroke:#D3CBBD;stroke-width:1}
+.d-pipe{fill:none;stroke:#A39C8E;stroke-width:1.3;stroke-dasharray:3 4}
+.d-chev{fill:none;stroke:#8C8577;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.d-edge line{stroke:#0F4C4F;stroke-width:.8;opacity:.28}
+.d-node{fill:#0F4C4F;opacity:.55}
+.d-node-hl{fill:#0F4C4F}
+.d-slot{fill:#0F4C4F}
+.d-axis{stroke:#B3AB9C;stroke-width:1;fill:none}
+.d-mark{fill:#0F4C4F;opacity:.7}
+.d-fit{stroke:#1A1916;stroke-width:1.6;fill:none;stroke-linecap:round}
+.d-bound{fill:rgba(15,76,79,.035);stroke:#0F4C4F;stroke-width:1;stroke-dasharray:5 4}
+.bar{fill:#0F4C4F}
+.bar2{fill:#8C8577}
+</style>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid #0F4C4F;outline-offset:3px;border-radius:2px}
+footer :focus-visible{outline-color:#9CCBC9}
+article,section{scroll-margin-top:24px}
+.skip{position:absolute;left:-9999px;top:8px;background:#1A1916;color:#FAF8F4;padding:8px 14px;font-size:14px;z-index:10}
+.skip:focus{left:8px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:480px){
+  figure{padding:16px 8px 12px !important}
+  figure figcaption{margin-left:8px !important;margin-right:8px !important}
+  figure svg{min-width:300px !important}
+  #work table{min-width:0 !important}
+  #work table th:nth-child(3),#work table td:nth-child(3){display:none}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--dark-slate);color:var(--stone);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-
-/* Header */
-header{padding:56px 0 32px;border-bottom:1px solid var(--line)}
-.name{font-family:var(--font-heading);font-weight:700;font-size:clamp(34px,6vw,52px);letter-spacing:.02em;line-height:1.05}
-.tagline{font-family:var(--font-heading);font-weight:500;color:var(--gold);font-size:clamp(15px,2.4vw,19px);letter-spacing:.04em;margin-top:10px;text-transform:uppercase}
-.contact{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
-.contact a:hover{color:var(--gold)}
-.intro{margin-top:24px;max-width:760px;font-size:clamp(15px,2vw,17px);color:#D7DCDC}
-.intro strong{color:var(--stone);font-weight:600}
-.build-note{margin-top:16px;max-width:760px;font-size:14px;color:var(--muted);border-left:2px solid var(--gold);padding-left:14px}
-.build-note b{color:var(--gold);font-weight:600}
-
-/* Section */
-.sec-label{font-family:var(--font-heading);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:13px;color:var(--muted);margin:46px 0 18px}
-
-/* Grid */
-.grid{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:760px){.grid{grid-template-columns:1fr 1fr}}
-
-/* Card */
-.card{background:var(--dark-surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;min-width:0;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--gold);transform:translateY(-3px)}
-/* A section holding a single card centres it at the same width as a paired one,
-   so every card on the page is the same size. */
-@media(min-width:760px){.grid>.card:only-child{grid-column:1/-1;max-width:calc(50% - 10px);margin:0 auto}}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.badge{font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px}
-.b-prod{background:rgba(11,79,85,.35);color:#7fd8c4;border:1px solid #2f6f6a}
-.b-live{background:rgba(197,160,89,.16);color:var(--gold);border:1px solid #6b5a35}
-.b-proto{background:rgba(154,163,165,.12);color:var(--muted);border:1px solid var(--line)}
-.b-advisory{background:rgba(255,255,255,.05);color:#cfd6d6;border:1px solid var(--line)}
-.b-daily{background:rgba(197,160,89,.16);color:var(--gold);border:1px solid #6b5a35}
-.card h3{font-family:var(--font-heading);font-weight:600;font-size:clamp(20px,3vw,25px);letter-spacing:.01em;line-height:1.15}
-.role{color:var(--gold);font-size:13px;font-weight:600;margin-top:6px}
-.card p{margin-top:12px;font-size:15px;color:#D2D8D8}
-.metric{margin-top:14px;font-family:var(--font-heading);font-weight:600;color:var(--stone);font-size:15px;letter-spacing:.01em}
-.metric span{color:var(--gold)}
-.stack{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
-.chip{font-size:12px;color:#B9C0C0;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:6px;padding:3px 9px}
-.actions{margin-top:auto;padding-top:18px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--stone);font-family:var(--font-body);font-weight:600;font-size:14px;padding:11px 20px;border-radius:var(--radius-sm);transition:background .15s}
-.btn:hover{background:#0d6068}
-.btn .arrow{transition:transform .15s}
-.btn:hover .arrow{transform:translateX(3px)}
-.btn-ghost{background:transparent;border:1.5px solid var(--line);color:var(--muted)}
-.note-private{font-size:13px;color:var(--muted);font-style:italic}
-.demo-hint{font-size:12px;color:var(--muted);margin-top:10px}
-
-/* Stat strip — 2x2 inside a half-width card */
-.statstrip{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-top:20px}
-.stat{background:var(--dark-slate);padding:13px 15px}
-.stat-n{font-family:var(--font-heading);font-weight:700;font-size:clamp(21px,2.6vw,26px);line-height:1;color:var(--gold)}
-.stat-n .unit{font-size:.55em;color:var(--muted);margin-left:3px;letter-spacing:.04em}
-.stat-l{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:7px;line-height:1.35}
-
-/* Diagram */
-.diagram{margin-top:22px;background:var(--dark-slate);border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px 14px 12px;min-width:0}
-.diagram-scroll{overflow-x:auto;min-width:0;-webkit-overflow-scrolling:touch}
-.diagram-scroll svg{display:block;width:100%;height:auto;min-width:600px}
-.diagram-cap{margin-top:12px;font-size:12.5px;color:var(--muted);text-align:center;line-height:1.5}
-.diagram.compact .diagram-scroll svg{min-width:320px}
-/* Compact diagrams render smaller, so their type is set larger in user units
-   to survive the downscale. */
-.diagram.compact .d-t{font-size:12px}
-.diagram.compact .d-t-sm{font-size:10.5px}
-.diagram.compact .d-t-hl{font-size:12px}
-.diagram.compact .d-lbl,.diagram.compact .d-lbl-hl{font-size:11px}
-.scroll-hint{display:none;margin-top:9px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-align:center}
-.scroll-hint.on{display:block}
-.d-lbl-hl{font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.16em;fill:var(--gold)}
-.d-big{font-family:var(--font-heading);font-weight:700;font-size:17px;fill:var(--gold)}
-.d-chip{fill:rgba(255,255,255,.04);stroke:var(--line);stroke-width:1}
-.d-axis{stroke:#2A3438;stroke-width:1;fill:none}
-.d-mark{fill:#7FD8C4}
-.d-fit{stroke:var(--gold);stroke-width:2;fill:none;stroke-linecap:round}
-.d-slot{fill:#7FD8C4;opacity:.85;animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.26s)}
-.d-seg{stroke:none}
-.d-seg1{fill:#7FD8C4;opacity:.3}
-.d-seg2{fill:#7FD8C4;opacity:.6}
-.d-seg3{fill:#7FD8C4;opacity:1}
-.d-drag{animation:d-drag 3.4s ease-in-out infinite}
-@keyframes d-drag{0%,12%{transform:translate(0,0) rotate(0deg)}45%,62%{transform:translate(100px,-4px) rotate(-4deg)}92%,100%{transform:translate(0,0) rotate(0deg)}}
-.d-drop{animation:d-glow 3.4s ease-in-out infinite;animation-delay:-1.2s}
-.d-lbl{font-family:var(--font-heading);font-weight:600;font-size:10px;letter-spacing:.16em;fill:var(--muted)}
-.d-t{font-family:var(--font-body);font-weight:500;font-size:11px;fill:#CDD4D4}
-.d-t-sm{font-family:var(--font-body);font-size:9.5px;fill:var(--muted)}
-.d-t-hl{font-family:var(--font-body);font-weight:600;font-size:11px;fill:var(--gold)}
-.d-box{fill:var(--dark-surface);stroke:var(--line);stroke-width:1}
-.d-panel{fill:#0C1012;stroke:var(--line);stroke-width:1}
-.d-pipe{fill:none;stroke:#3B4A50;stroke-width:1.5;stroke-dasharray:4 7;animation:d-flow 1.9s linear infinite}
-@keyframes d-flow{to{stroke-dashoffset:-22}}
-.d-edge{stroke:#2f6f6a;stroke-width:.9;opacity:.4}
-.d-chev{fill:none;stroke:#6b7a80;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;animation:d-glow 2.2s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.35s)}
-.d-node{fill:#7FD8C4;animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.21s)}
-.d-node-hl{fill:var(--gold);animation:d-glow 3.4s ease-in-out infinite;animation-delay:calc(var(--i,0)*-.21s)}
-@keyframes d-glow{0%,100%{opacity:.32}50%{opacity:1}}
-.d-bound{fill:rgba(127,216,196,.03);stroke:#2f6f6a;stroke-width:1.2;stroke-dasharray:6 5}
-.bar{fill:#7FD8C4;transform-box:fill-box;transform-origin:center;transform:scaleY(var(--h,.5));animation:d-bar .95s ease-in-out infinite alternate;animation-delay:calc(var(--i,0)*-.13s)}
-.bar.b2{fill:var(--gold);animation-duration:1.25s;animation-delay:calc(var(--i,0)*-.17s)}
-@keyframes d-bar{from{transform:scaleY(.14)}to{transform:scaleY(1)}}
-
-footer{margin-top:60px;padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
-footer a:hover{color:var(--gold)}
-.foot-cta{font-family:var(--font-heading);font-weight:600;letter-spacing:.04em;color:var(--stone)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#work">Skip to selected work</a>
+<div style="font-family: 'Inter', system-ui, sans-serif; color: #3A3833; background: #FAF8F4; font-size: 16px; line-height: 1.65">
 
-<header>
-  <div class="wrap">
-    <div class="name">Sean Cook</div>
-    <div class="tagline">AI Leader &nbsp;·&nbsp; Forward Deployed Engineer &nbsp;·&nbsp; Builder</div>
-    <div class="contact">
-      <span>Frisco, TX</span>
-      <a href="mailto:sean@halandigital.com">sean@halandigital.com</a>
-      <a href="https://linkedin.com/in/sean-cook-2018" target="_blank" rel="noopener">linkedin.com/in/sean-cook-2018</a>
-      <a href="https://halandigital.com" target="_blank" rel="noopener">halandigital.com</a>
-    </div>
-    <p class="intro">
-      I drive <strong>AI strategy, transformation, and adoption</strong> — and I design and ship the
-      <strong>production systems</strong> that make it real, building them by orchestrating multi-agent clusters
-      myself rather than managing from a distance. Twenty years of high-stakes technical delivery, from
-      reservoir engineering embedded on-site at Saudi Aramco, ExxonMobil, and PetroChina to a live, multi-agent
-      AI recruiting platform screening real candidates today. Below is a selection — several with live demos you can open.
-    </p>
-    <p class="build-note">
-      <b>How I build:</b> every system here was delivered by directing fleets of specialized AI subagents in Claude Code
-      to plan, architect, and implement — then verifying and integrating the output. Applied agentic AI as a daily
-      delivery model, not a slideware concept.
-    </p>
-  </div>
+<header style="border-bottom: 1px solid #DDD6CA">
+<div style="max-width: 1100px; margin: 0 auto; padding: 10px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; min-height: 60px; box-sizing: border-box">
+<a href="#top" style="font-family: 'Newsreader', Georgia, serif; font-size: 19px; font-weight: 500; color: #1A1916; text-decoration: none">Sean Cook</a>
+<nav aria-label="Page" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 24px; font-size: 13.5px; font-weight: 500">
+<a href="#work" style="color: #625F57; text-decoration: none">Selected work</a>
+<a href="#approach" style="color: #625F57; text-decoration: none">How I build</a>
+<a href="https://linkedin.com/in/sean-cook-2018" target="_blank" rel="noopener" style="color: #625F57; text-decoration: none">LinkedIn</a>
+<a href="mailto:sean@halandigital.com" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 2px; background: #0F4C4F; color: #FFFFFF; text-decoration: none; font-weight: 600">Email Sean</a>
+</nav>
+</div>
 </header>
 
-<main class="wrap">
-
-  <div class="sec-label">Flagship — Multi-Agent AI Systems</div>
-  <div class="grid">
-    <article class="card">
-      <div class="badges"><span class="badge b-prod">Live in production</span><span class="badge b-advisory">Chief of AI</span></div>
-      <h3>Autonomous AI Recruiting Pipeline</h3>
-      <div class="role">Scale Virtually — Chief of AI</div>
-      <p>
-        This screens job applicants from start to finish on its own. Someone applies, AI reads their résumé against
-        the job, they record a voice interview whenever it suits them, the system scores both what they said and how
-        they said it, then decides who moves forward. Nobody on the staffing team touches a normal application.
-        It runs on real candidates today, built straight into the company's own hiring software.
-      </p>
-      <p>
-        The cost trick is routing. Every AI call goes to the cheapest model that can handle that particular step,
-        which cut the bill <strong>6.5×</strong> and brought screening down to about two cents a candidate.
-      </p>
-      <div class="stack">
-        <span class="chip">n8n orchestration</span><span class="chip">Anthropic Claude</span><span class="chip">Speechace (speech AI)</span>
-        <span class="chip">Supabase</span><span class="chip">Resend</span><span class="chip">Vercel</span><span class="chip">Workable API</span><span class="chip">Node.js</span>
-      </div>
-      <div class="metric"><span>6</span> orchestrated workflows &nbsp;·&nbsp; <span>~1,800</span> automated tests</div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 236" role="img" aria-label="A five-step hiring funnel: the candidate applies, AI reads the resume against the job, the candidate records a voice interview, speech and answers are scored, and the system advances, holds or rejects. No human touches the normal path.">
-          <text class="d-lbl-hl" x="210" y="13" text-anchor="middle">NO HUMAN TOUCH ON THE NORMAL PATH</text>
-
-          <rect class="d-box" x="40" y="26" width="340" height="26" rx="6"/>
-          <text class="d-t" x="210" y="43" text-anchor="middle">Candidate applies</text>
-          <path class="d-chev" style="--i:0" d="M203 55 L210 60 L217 55"/>
-          <rect class="d-box" x="50" y="62" width="320" height="26" rx="6"/>
-          <text class="d-t" x="210" y="79" text-anchor="middle">AI reads résumé against the job</text>
-          <path class="d-chev" style="--i:1" d="M203 91 L210 96 L217 91"/>
-          <rect class="d-box" x="60" y="98" width="300" height="26" rx="6"/>
-          <text class="d-t" x="210" y="115" text-anchor="middle">Records a voice interview</text>
-          <path class="d-chev" style="--i:2" d="M203 127 L210 132 L217 127"/>
-          <rect class="d-box" x="70" y="134" width="280" height="26" rx="6"/>
-          <text class="d-t" x="210" y="151" text-anchor="middle">Speech + answers scored</text>
-          <path class="d-chev" style="--i:3" d="M203 163 L210 168 L217 163"/>
-          <rect x="80" y="170" width="260" height="26" rx="6" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
-          <text class="d-t-hl" x="210" y="187" text-anchor="middle">Advance · hold · reject</text>
-
-          <text class="d-t-sm" x="210" y="214" text-anchor="middle">Every AI call goes to the cheapest model that</text>
-          <text class="d-t-sm" x="210" y="228" text-anchor="middle">can do that step — 6.5× cost cut</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions">
-        <span class="note-private">Internal production system — live walkthrough available on request.</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="badges"><span class="badge b-live">Live demo</span></div>
-      <h3>REI AI Command Center</h3>
-      <div class="role">REI Summit 2026 — Designer &amp; Builder</div>
-      <p>A dashboard for real estate investors with <strong>six AI assistants</strong>, each doing one job: tracking the
-      portfolio, finding deals, planning rehabs, chasing maintenance, sorting tax, and waking up cold leads. A seventh
-      agent sits above them, works out who should handle a request, and pulls the answers back together. Demoed live
-      at a national industry summit.</p>
-      <div class="stack"><span class="chip">React 19</span><span class="chip">TypeScript</span><span class="chip">OpenRouter LLMs</span><span class="chip">Tailwind</span><span class="chip">Vercel</span></div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 216" role="img" aria-label="A CEO-level orchestrator agent sits at the centre and delegates to six specialised agents: portfolio, deal sourcing, rehab, maintenance, tax, and lead reactivation.">
-          <defs>
-            <marker id="arw-e" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
-            </marker>
-          </defs>
-
-          <text class="d-lbl" x="210" y="13" text-anchor="middle">SIX AGENTS, ONE ORCHESTRATOR</text>
-
-          <path class="d-pipe" d="M160 108 C146 108 146 42 130 42" marker-end="url(#arw-e)"/>
-          <path class="d-pipe" d="M160 108 L130 108" marker-end="url(#arw-e)"/>
-          <path class="d-pipe" d="M160 108 C146 108 146 174 130 174" marker-end="url(#arw-e)"/>
-          <path class="d-pipe" d="M260 108 C276 108 276 42 290 42" marker-end="url(#arw-e)"/>
-          <path class="d-pipe" d="M260 108 L290 108" marker-end="url(#arw-e)"/>
-          <path class="d-pipe" d="M260 108 C276 108 276 174 290 174" marker-end="url(#arw-e)"/>
-
-          <rect class="d-box" x="6" y="26" width="124" height="32" rx="6"/><text class="d-t" x="68" y="46" text-anchor="middle">Portfolio</text>
-          <rect class="d-box" x="6" y="92" width="124" height="32" rx="6"/><text class="d-t" x="68" y="112" text-anchor="middle">Deal sourcing</text>
-          <rect class="d-box" x="6" y="158" width="124" height="32" rx="6"/><text class="d-t" x="68" y="178" text-anchor="middle">Rehab</text>
-          <rect class="d-box" x="290" y="26" width="124" height="32" rx="6"/><text class="d-t" x="352" y="46" text-anchor="middle">Maintenance</text>
-          <rect class="d-box" x="290" y="92" width="124" height="32" rx="6"/><text class="d-t" x="352" y="112" text-anchor="middle">Tax</text>
-          <rect class="d-box" x="290" y="158" width="124" height="32" rx="6"/><text class="d-t" x="352" y="178" text-anchor="middle">Lead reactivation</text>
-
-          <rect x="160" y="90" width="100" height="36" rx="8" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
-          <text class="d-t-hl" x="210" y="106" text-anchor="middle">CEO-level</text>
-          <text class="d-t-hl" x="210" y="119" text-anchor="middle">orchestrator</text>
-
-          <text class="d-t-sm" x="210" y="208" text-anchor="middle">Each agent owns a domain; the orchestrator routes and reconciles.</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions"><a class="btn" href="https://client-rei-summit-command-center.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
-    </article>
-  </div>
-
-
-  <div class="sec-label">Client Systems — Integration Engineering</div>
-  <div class="grid">
-
-    <article class="card">
-      <div class="badges"><span class="badge b-live">Built &amp; tested</span><span class="badge b-advisory">Voice AI</span><span class="badge b-advisory">Client go-live pending</span></div>
-      <h3>Voice Agent for Field Service Close-Out</h3>
-      <div class="role">Commercial services contractor — via partner engagement</div>
-      <p>
-        When a technician finishes a job, the billing team has to chase them by phone for the handful of details
-        an invoice needs. This calls the tech instead. The agent asks a fixed set of questions, and the answers
-        come back mid-call as structured data, land in the job record in the company's ERP, and flag the ones
-        that need a human.
-      </p>
-      <p>
-        The hard part was writing into a system that already holds real people's work. The ERP only accepts a
-        whole-note overwrite, and roughly a third of those notes already had a biller's own writing in them.
-        So it <strong>reads the note first, prepends to it, and refuses to write at all if that read fails</strong>
-        — an automation that can silently destroy someone's work is worse than no automation.
-      </p>
-      <p>
-        <strong>Next on the roadmap:</strong> the close-out call is the first piece of a larger program. The
-        anchor build is an invoice agent — it reads the finished job, works out what the customer's contract
-        covers and what is billable, and drafts the invoice <em>on hold</em> so a person still releases every
-        one. The model classifies and names the rule it applied; a deterministic step does all the money math,
-        so no dollar figure is ever produced by a language model. After that comes the dispatch side: turning
-        inbound service email into scheduled appointments, and after-hours coverage that knows who is on call.
-      </p>
-      <div class="stack">
-        <span class="chip">n8n orchestration</span><span class="chip">Voice AI agent</span><span class="chip">ERP REST API</span>
-        <span class="chip">Webhook tooling</span><span class="chip">Python test harness</span>
-      </div>
-      <div class="metric"><span>3</span> orchestrated workflows &nbsp;·&nbsp; <span>180+</span> automated checks, including live writes against a real ERP sandbox</div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 250" role="img" aria-label="A five-step pipeline: a job closes in the ERP, a queue is built with filtering, de-duplication and a forty-eight hour age cap, a voice agent calls the technician, seven structured answers return mid-call, and the system reads the existing job note, prepends to it and writes it back, refusing to write if the read fails.">
-          <text class="d-lbl-hl" x="210" y="13" text-anchor="middle">NOBODY CHASES THE TECHNICIAN BY PHONE</text>
-
-          <rect class="d-box" x="40" y="26" width="340" height="26" rx="6"/>
-          <text class="d-t" x="210" y="43" text-anchor="middle">Job closes in the ERP</text>
-          <path class="d-chev" style="--i:0" d="M203 55 L210 60 L217 55"/>
-          <rect class="d-box" x="50" y="62" width="320" height="26" rx="6"/>
-          <text class="d-t" x="210" y="79" text-anchor="middle">Queue built: filtered, de-duped, 48-hour age cap</text>
-          <path class="d-chev" style="--i:1" d="M203 91 L210 96 L217 91"/>
-          <rect class="d-box" x="60" y="98" width="300" height="26" rx="6"/>
-          <text class="d-t" x="210" y="115" text-anchor="middle">Voice agent calls the technician</text>
-          <path class="d-chev" style="--i:2" d="M203 127 L210 132 L217 127"/>
-          <rect class="d-box" x="70" y="134" width="280" height="26" rx="6"/>
-          <text class="d-t" x="210" y="151" text-anchor="middle">7 structured answers return mid-call</text>
-          <path class="d-chev" style="--i:3" d="M203 163 L210 168 L217 163"/>
-          <rect x="80" y="170" width="260" height="26" rx="6" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
-          <text class="d-t-hl" x="210" y="187" text-anchor="middle">Read → prepend → write back</text>
-
-          <text class="d-t-sm" x="210" y="214" text-anchor="middle">Anything the call could not confirm is flagged for a human</text>
-          <text class="d-t-sm" x="210" y="228" text-anchor="middle">instead of guessed. If the read fails, nothing is written —</text>
-          <text class="d-t-sm" x="210" y="242" text-anchor="middle">a biller's own notes are never overwritten.</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions">
-        <span class="note-private">Client system — anonymized at the client's discretion; walkthrough available on request.</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="badges"><span class="badge b-proto">Prototype</span></div>
-      <h3>Real Estate Investment Platform</h3>
-      <div class="role">Scale Virtually — Builder</div>
-      <p>A <strong>27-page</strong> platform for property investors. It rates any deal on eight weighted factors so
-      every property ends up with one score you can compare, and prices a home by fitting a trend line through
-      recent comparable sales — the reasoning an appraiser does by hand, done in a second. It also spots likely
-      flips and drafts the contract.</p>
-      <div class="stack"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Supabase / PostGIS</span><span class="chip">Mapbox</span><span class="chip">Recharts</span></div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 196" role="img" aria-label="Two mechanisms side by side: eight weighted factors combine into a single composite deal score, and an ordinary-least-squares regression fits a line through comparable sales to produce a valuation.">
-          <defs>
-            <marker id="arw-i" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
-            </marker>
-          </defs>
-
-          <text class="d-lbl" x="100" y="13" text-anchor="middle">8-FACTOR DEAL SCORE</text>
-          <text class="d-lbl" x="320" y="13" text-anchor="middle">OLS-REGRESSION CMA</text>
-
-          <g>
-            <rect class="d-slot" style="--i:0" x="14" y="30" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:1" x="14" y="42" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:2" x="14" y="54" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:3" x="14" y="66" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:4" x="14" y="78" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:5" x="14" y="90" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:6" x="14" y="102" width="56" height="7" rx="3"/>
-            <rect class="d-slot" style="--i:7" x="14" y="114" width="56" height="7" rx="3"/>
-          </g>
-          <text class="d-t-sm" x="14" y="136">8 weighted factors</text>
-
-          <path class="d-pipe" d="M70 34 C92 34 92 76 108 76"/>
-          <path class="d-pipe" d="M70 76 L108 76" marker-end="url(#arw-i)"/>
-          <path class="d-pipe" d="M70 118 C92 118 92 76 108 76"/>
-
-          <rect x="108" y="58" width="82" height="36" rx="8" fill="rgba(197,160,89,.14)" stroke="#6b5a35" stroke-width="1"/>
-          <text class="d-t-hl" x="149" y="74" text-anchor="middle">Composite</text>
-          <text class="d-t-hl" x="149" y="87" text-anchor="middle">deal score</text>
-
-          <path class="d-axis" d="M232 26 L232 126 L410 126"/>
-          <path class="d-fit" d="M240 116 L402 44"/>
-          <g class="d-mark">
-            <circle cx="248" cy="112" r="3.5"/><circle cx="262" cy="103" r="3.5"/><circle cx="276" cy="108" r="3.5"/>
-            <circle cx="290" cy="95" r="3.5"/><circle cx="304" cy="90" r="3.5"/><circle cx="318" cy="96" r="3.5"/>
-            <circle cx="332" cy="81" r="3.5"/><circle cx="346" cy="75" r="3.5"/><circle cx="360" cy="83" r="3.5"/>
-            <circle cx="374" cy="64" r="3.5"/><circle cx="388" cy="57" r="3.5"/><circle cx="400" cy="50" r="3.5"/>
-          </g>
-          <text class="d-t-sm" x="321" y="140" text-anchor="middle">comparable sales → fitted valuation</text>
-
-          <rect class="d-chip" x="60" y="152" width="140" height="24" rx="5"/>
-          <text class="d-t-sm" x="130" y="168" text-anchor="middle">Flip detection</text>
-          <rect class="d-chip" x="220" y="152" width="140" height="24" rx="5"/>
-          <text class="d-t-sm" x="290" y="168" text-anchor="middle">Contract generation</text>
-
-          <text class="d-t-sm" x="210" y="190" text-anchor="middle">27 pages · PostGIS + Mapbox geospatial layer</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions"><a class="btn" href="https://client-scale-virtually-website-clon.vercel.app" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
-    </article>
-
-  </div>
-  <div class="sec-label">Live Demos — Open in Your Browser</div>
-  <div class="grid">
-
-    
-
-    <article class="card">
-      <div class="badges"><span class="badge b-live">Live demo</span></div>
-      <h3>TRAIGA Readiness Platform</h3>
-      <div class="role">Halan Digital — AI Governance Build</div>
-      <p>Texas passed a new AI law and most companies have no idea whether it applies to them. This asks
-      <strong>ten questions</strong>, weighs the answers, and tells you how exposed you are — plus the three things
-      to fix first and where your industry is most at risk. It turns a compliance worry into a lead: people hand
-      over their details to see their score.</p>
-      <div class="stack"><span class="chip">NIST AI RMF</span><span class="chip">Vanilla JS</span><span class="chip">PDF pipeline</span><span class="chip">Vercel</span></div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 194" role="img" aria-label="Ten weighted questions are scored onto a three-band exposure tier scale of low, moderate and high, which returns the top three NIST AI RMF controls and sector-specific exposure points.">
-          <text class="d-lbl" x="210" y="13" text-anchor="middle">WEIGHTED ASSESSMENT → EXPOSURE TIER</text>
-
-          <g>
-            <rect class="d-slot" style="--i:0" x="34" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:1" x="70" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:2" x="106" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:3" x="142" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:4" x="178" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:5" x="214" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:6" x="250" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:7" x="286" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:8" x="322" y="26" width="28" height="9" rx="3"/>
-            <rect class="d-slot" style="--i:9" x="358" y="26" width="28" height="9" rx="3"/>
-          </g>
-          <text class="d-t-sm" x="210" y="50" text-anchor="middle">10 weighted questions</text>
-
-          <path d="M204 62 L216 62 L210 72 z" fill="#C5A059"/>
-          <rect class="d-seg d-seg1" x="40" y="76" width="110" height="16" rx="4"/>
-          <rect class="d-seg d-seg2" x="154" y="76" width="110" height="16" rx="4"/>
-          <rect class="d-seg d-seg3" x="268" y="76" width="112" height="16" rx="4"/>
-          <text class="d-t-sm" x="95" y="106" text-anchor="middle">Low</text>
-          <text class="d-t-sm" x="209" y="106" text-anchor="middle">Moderate</text>
-          <text class="d-t-sm" x="324" y="106" text-anchor="middle">High</text>
-
-          <rect class="d-box" x="26" y="120" width="180" height="34" rx="6"/>
-          <text class="d-t" x="116" y="135" text-anchor="middle">Top-3 NIST AI RMF</text>
-          <text class="d-t" x="116" y="148" text-anchor="middle">controls</text>
-          <rect class="d-box" x="214" y="120" width="180" height="34" rx="6"/>
-          <text class="d-t" x="304" y="135" text-anchor="middle">Sector-specific</text>
-          <text class="d-t" x="304" y="148" text-anchor="middle">exposure points</text>
-
-          <text class="d-t-sm" x="210" y="180" text-anchor="middle">Ten questions in, a ranked remediation path out.</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions"><a class="btn" href="https://traiga-readiness.vercel.app" target="_blank" rel="noopener">View live <span class="arrow">→</span></a></div>
-    </article>
-
-    <article class="card">
-      <div class="badges"><span class="badge b-live">Live demo</span><span class="badge b-advisory">Paid advisory</span></div>
-      <h3>Operations &amp; Automation Audit</h3>
-      <div class="role">Celestial Beerworks — Consultant</div>
-      <p>A paid review of how the business actually runs day to day, and what to automate first. I mapped the work
-      into a <strong>five-stage automated workflow</strong>, then costed it three ways — cautious, likely, and best
-      case — so they got an honest range instead of one flattering number. Delivered with an interactive page they
-      could click through.</p>
-      <div class="metric"><span>$12.9K–$49K</span> modeled net annual benefit</div>
-      <div class="stack"><span class="chip">n8n</span><span class="chip">ROI modeling</span><span class="chip">Process architecture</span><span class="chip">Vercel</span></div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 196" role="img" aria-label="A five-stage n8n automation architecture feeds a three-scenario ROI model, which returns a modeled net annual benefit of 12.9 to 49 thousand dollars and a payback period of 6 to 20 months.">
-          <defs>
-            <marker id="arw-c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
-            </marker>
-          </defs>
-
-          <text class="d-lbl" x="210" y="13" text-anchor="middle">FIVE-STAGE n8n ARCHITECTURE</text>
-
-          <rect class="d-box" x="42" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="70" y="44" text-anchor="middle">01</text>
-          <rect class="d-box" x="112" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="140" y="44" text-anchor="middle">02</text>
-          <rect class="d-box" x="182" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="210" y="44" text-anchor="middle">03</text>
-          <rect class="d-box" x="252" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="280" y="44" text-anchor="middle">04</text>
-          <rect class="d-box" x="322" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="350" y="44" text-anchor="middle">05</text>
-          <path class="d-pipe" d="M98 40 L112 40" marker-end="url(#arw-c)"/>
-          <path class="d-pipe" d="M168 40 L182 40" marker-end="url(#arw-c)"/>
-          <path class="d-pipe" d="M238 40 L252 40" marker-end="url(#arw-c)"/>
-          <path class="d-pipe" d="M308 40 L322 40" marker-end="url(#arw-c)"/>
-
-          <text class="d-lbl" x="210" y="80" text-anchor="middle">THREE-SCENARIO ROI MODEL</text>
-
-          <rect class="d-panel" x="14" y="90" width="190" height="56" rx="8"/>
-          <text class="d-big" x="109" y="118" text-anchor="middle">$12.9K–$49K</text>
-          <text class="d-t-sm" x="109" y="134" text-anchor="middle">modeled net annual benefit</text>
-
-          <rect class="d-panel" x="216" y="90" width="190" height="56" rx="8"/>
-          <text class="d-big" x="311" y="118" text-anchor="middle">6–20 months</text>
-          <text class="d-t-sm" x="311" y="134" text-anchor="middle">payback period</text>
-
-          <text class="d-t-sm" x="210" y="172" text-anchor="middle">Conservative, base, and upside cases — the range is the deliverable,</text>
-          <text class="d-t-sm" x="210" y="186" text-anchor="middle">not a single flattering number.</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions"><a class="btn" href="https://celestial-audit-companion.vercel.app" target="_blank" rel="noopener">View companion <span class="arrow">→</span></a></div>
-    </article>
-
-  </div>
-
-  <div class="sec-label">Built for Myself — Shipped and Running Every Day</div>
-  <div class="grid">
-
-    <article class="card">
-      <div class="badges"><span class="badge b-daily">Running daily</span><span class="badge b-advisory">Personal infrastructure</span></div>
-      <h3>SeanOS — My Second Brain &amp; Operating System</h3>
-      <div class="role">Personal build — Architect &amp; Engineer</div>
-      <p>
-        The system I run my working life on. I dump things in — meeting recordings, articles, voice notes,
-        half-formed ideas — and it files each one, links it to what I already know, and hands me a plan in the
-        morning. Two machines share one set of files: my Mac does the building, and a small always-on server runs
-        the daily routine overnight. A watchdog checks every run and repairs the ones that fail.
-      </p>
-      <p>
-        It is all <strong>plain text files</strong>. The dashboards and views on top are throwaway — any app can
-        rebuild them — so nothing important is trapped in one program's format. I can move the whole thing to a
-        different app, or a different AI model, without losing anything.
-      </p>
-      <div class="stack">
-        <span class="chip">Claude Code</span><span class="chip">Multi-agent orchestration</span><span class="chip">Markdown + YAML</span>
-        <span class="chip">Always-on VPS agent</span><span class="chip">Tailscale</span><span class="chip">MCP servers</span>
-        <span class="chip">Obsidian</span><span class="chip">GoHighLevel API</span>
-      </div>
-      <div class="statstrip">
-        <div class="stat"><div class="stat-n" data-count="687">687</div><div class="stat-l">Knowledge pages</div></div>
-        <div class="stat"><div class="stat-n" data-count="10628">10,628</div><div class="stat-l">Links between them</div></div>
-        <div class="stat"><div class="stat-n" data-count="305">305</div><div class="stat-l">Live task records</div></div>
-        <div class="stat"><div class="stat-n" data-count="122">122</div><div class="stat-l">Specialist agents</div></div>
-      </div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 244" role="img" aria-label="Meetings, web clips, voice notes and an inbox all feed into one linked set of notes, which produces today's plan, an approval queue and a 6am brief. Two computers share the same plain text files.">
-          <text class="d-lbl" x="210" y="13" text-anchor="middle">CAPTURE → ORGANIZE → PLAN MY DAY</text>
-
-          <rect class="d-box" x="6" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="54" y="38" text-anchor="middle">Meetings</text>
-          <rect class="d-box" x="110" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="158" y="38" text-anchor="middle">Web clips</text>
-          <rect class="d-box" x="214" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="262" y="38" text-anchor="middle">Voice notes</text>
-          <rect class="d-box" x="318" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="366" y="38" text-anchor="middle">Inbox</text>
-          <path class="d-pipe" d="M54 46 L54 62"/><path class="d-pipe" d="M158 46 L158 62"/>
-          <path class="d-pipe" d="M262 46 L262 62"/><path class="d-pipe" d="M366 46 L366 62"/>
-
-          <rect class="d-panel" x="20" y="62" width="380" height="118" rx="9"/>
-          <g class="d-edge">
-            <line x1="60" y1="92" x2="108" y2="80"/><line x1="108" y1="80" x2="156" y2="94"/>
-            <line x1="156" y1="94" x2="204" y2="81"/><line x1="204" y1="81" x2="252" y2="93"/>
-            <line x1="252" y1="93" x2="300" y2="79"/><line x1="300" y1="79" x2="348" y2="91"/>
-            <line x1="52" y1="126" x2="100" y2="114"/><line x1="100" y1="114" x2="148" y2="128"/>
-            <line x1="148" y1="128" x2="196" y2="115"/><line x1="196" y1="115" x2="244" y2="127"/>
-            <line x1="244" y1="127" x2="292" y2="113"/><line x1="292" y1="113" x2="340" y2="125"/>
-            <line x1="340" y1="125" x2="376" y2="116"/>
-            <line x1="84" y1="150" x2="172" y2="152"/><line x1="172" y1="152" x2="260" y2="148"/>
-            <line x1="260" y1="148" x2="348" y2="150"/>
-            <line x1="60" y1="92" x2="52" y2="126"/><line x1="156" y1="94" x2="148" y2="128"/>
-            <line x1="204" y1="81" x2="196" y2="115"/><line x1="300" y1="79" x2="292" y2="113"/>
-            <line x1="348" y1="91" x2="340" y2="125"/><line x1="100" y1="114" x2="84" y2="150"/>
-            <line x1="196" y1="115" x2="172" y2="152"/><line x1="292" y1="113" x2="260" y2="148"/>
-            <line x1="340" y1="125" x2="348" y2="150"/>
-            <line x1="60" y1="92" x2="196" y2="115"/><line x1="204" y1="81" x2="348" y2="150"/>
-            <line x1="52" y1="126" x2="260" y2="148"/>
-          </g>
-          <g>
-            <circle class="d-node" style="--i:0" cx="60" cy="92" r="3"/><circle class="d-node" style="--i:1" cx="108" cy="80" r="3"/>
-            <circle class="d-node" style="--i:2" cx="156" cy="94" r="3"/><circle class="d-node-hl" style="--i:3" cx="204" cy="81" r="4.5"/>
-            <circle class="d-node" style="--i:4" cx="252" cy="93" r="3"/><circle class="d-node" style="--i:5" cx="300" cy="79" r="3"/>
-            <circle class="d-node" style="--i:6" cx="348" cy="91" r="3"/>
-            <circle class="d-node" style="--i:7" cx="52" cy="126" r="3"/><circle class="d-node" style="--i:8" cx="100" cy="114" r="3"/>
-            <circle class="d-node" style="--i:9" cx="148" cy="128" r="3"/><circle class="d-node-hl" style="--i:10" cx="196" cy="115" r="4.5"/>
-            <circle class="d-node" style="--i:11" cx="244" cy="127" r="3"/><circle class="d-node" style="--i:12" cx="292" cy="113" r="3"/>
-            <circle class="d-node" style="--i:13" cx="340" cy="125" r="3"/><circle class="d-node" style="--i:14" cx="376" cy="116" r="3"/>
-            <circle class="d-node" style="--i:15" cx="84" cy="150" r="3"/><circle class="d-node" style="--i:16" cx="172" cy="152" r="3"/>
-            <circle class="d-node-hl" style="--i:17" cx="260" cy="148" r="4.5"/><circle class="d-node" style="--i:18" cx="348" cy="150" r="3"/>
-          </g>
-          <text class="d-t-sm" x="210" y="172" text-anchor="middle">687 pages, linked to each other automatically</text>
-
-          <path class="d-pipe" d="M70 180 L70 192"/><path class="d-pipe" d="M210 180 L210 192"/><path class="d-pipe" d="M350 180 L350 192"/>
-          <rect class="d-box" x="5" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="70" y="209" text-anchor="middle">Today&#39;s plan</text>
-          <rect class="d-box" x="145" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="210" y="209" text-anchor="middle">What needs approval</text>
-          <rect class="d-box" x="285" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="350" y="209" text-anchor="middle">06:00 brief</text>
-
-          <text class="d-t-sm" x="210" y="236" text-anchor="middle">Two machines, one set of plain text files</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions">
-        <span class="note-private">Private system — it runs my life, so it isn&#39;t public. Walkthrough available on request.</span>
-      </div>
-    </article>
-
-    <article class="card">
-      <div class="badges"><span class="badge b-daily">Running daily</span><span class="badge b-prod">On-device</span><span class="badge b-advisory">Swift / macOS</span></div>
-      <h3>quill — Meeting Notes That Never Leave My Mac</h3>
-      <div class="role">Personal build — Engineer</div>
-      <p>
-        A Mac app that records my meetings and writes up the notes. It records my microphone and the other
-        person&#39;s audio as <strong>two separate tracks</strong>, which is a simple trick that tells you who said what
-        without any AI guessing at voices. The transcription runs on the laptop itself — about 20 seconds of work
-        per hour of audio — so no recording is ever uploaded anywhere.
-      </p>
-      <p>
-        I picked the parts by testing, not guessing. Apple&#39;s built-in on-device model went first: on a real
-        12,000-word meeting it credited the wrong person with half the conversation and dropped the details, so
-        note-writing goes to Claude and the local model stays as the offline backup. That is the one thing that
-        leaves the machine, it is text only, and it can only reach a single approved address.
-      </p>
-      <div class="stack">
-        <span class="chip">Swift</span><span class="chip">SwiftUI</span><span class="chip">Core Audio process taps</span>
-        <span class="chip">Parakeet TDT 0.6B</span><span class="chip">FluidAudio</span><span class="chip">EventKit</span>
-        <span class="chip">Claude API</span><span class="chip">Keychain</span>
-      </div>
-      <p class="demo-hint">Built on an MIT-licensed capture core (digimata/quill). The meeting app, calendar layer, note pipeline, voice-note pipeline, and vault integration are mine.</p>
-      <div class="statstrip">
-        <div class="stat"><div class="stat-n" data-count="8800">8,800</div><div class="stat-l">Lines of Swift</div></div>
-        <div class="stat"><div class="stat-n" data-count="90">90</div><div class="stat-l">MB memory used</div></div>
-        <div class="stat"><div class="stat-n"><span data-count="20">20</span><span class="unit">sec</span></div><div class="stat-l">To transcribe an hour</div></div>
-        <div class="stat"><div class="stat-n" data-count="0">0</div><div class="stat-l">Audio sent off the Mac</div></div>
-      </div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 240" role="img" aria-label="The microphone and system audio are recorded as two separate tracks, transcribed on the machine itself into a speaker-tagged transcript. All of that stays inside a boundary marked this machine. Only the finished text goes out to Claude to write the notes.">
-          <defs>
-            <marker id="arw-q" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-              <path d="M0 0 L8 4 L0 8 z" fill="#3B4A50"/>
-            </marker>
-          </defs>
-
-          <rect class="d-bound" x="6" y="20" width="300" height="182" rx="11"/>
-          <text class="d-lbl" x="18" y="37">THIS MACHINE</text>
-
-          <rect class="d-box" x="18" y="42" width="132" height="44" rx="7"/>
-          <text class="d-t-sm" x="26" y="57">My mic</text>
-          <g>
-            <rect class="bar" style="--i:0;--h:.35" x="26" y="62" width="3" height="20"/><rect class="bar" style="--i:1;--h:.7" x="32" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:2;--h:.45" x="38" y="62" width="3" height="20"/><rect class="bar" style="--i:3;--h:.9" x="44" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:4;--h:.55" x="50" y="62" width="3" height="20"/><rect class="bar" style="--i:5;--h:.3" x="56" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:6;--h:.75" x="62" y="62" width="3" height="20"/><rect class="bar" style="--i:7;--h:1" x="68" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:8;--h:.6" x="74" y="62" width="3" height="20"/><rect class="bar" style="--i:9;--h:.4" x="80" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:10;--h:.85" x="86" y="62" width="3" height="20"/><rect class="bar" style="--i:11;--h:.5" x="92" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:12;--h:.28" x="98" y="62" width="3" height="20"/><rect class="bar" style="--i:13;--h:.65" x="104" y="62" width="3" height="20"/>
-            <rect class="bar" style="--i:14;--h:.42" x="110" y="62" width="3" height="20"/><rect class="bar" style="--i:15;--h:.8" x="116" y="62" width="3" height="20"/>
-          </g>
-
-          <rect class="d-box" x="160" y="42" width="132" height="44" rx="7"/>
-          <text class="d-t-sm" x="168" y="57">Them</text>
-          <g>
-            <rect class="bar b2" style="--i:0;--h:.8" x="168" y="62" width="3" height="20"/><rect class="bar b2" style="--i:1;--h:.4" x="174" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:2;--h:.95" x="180" y="62" width="3" height="20"/><rect class="bar b2" style="--i:3;--h:.5" x="186" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:4;--h:.3" x="192" y="62" width="3" height="20"/><rect class="bar b2" style="--i:5;--h:.7" x="198" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:6;--h:.45" x="204" y="62" width="3" height="20"/><rect class="bar b2" style="--i:7;--h:.6" x="210" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:8;--h:.9" x="216" y="62" width="3" height="20"/><rect class="bar b2" style="--i:9;--h:.35" x="222" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:10;--h:.55" x="228" y="62" width="3" height="20"/><rect class="bar b2" style="--i:11;--h:.75" x="234" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:12;--h:.48" x="240" y="62" width="3" height="20"/><rect class="bar b2" style="--i:13;--h:.32" x="246" y="62" width="3" height="20"/>
-            <rect class="bar b2" style="--i:14;--h:.85" x="252" y="62" width="3" height="20"/><rect class="bar b2" style="--i:15;--h:.52" x="258" y="62" width="3" height="20"/>
-          </g>
-
-          <path class="d-pipe" d="M84 86 C84 96 156 96 156 104" marker-end="url(#arw-q)"/>
-          <path class="d-pipe" d="M226 86 C226 96 156 96 156 104" marker-end="url(#arw-q)"/>
-
-          <rect class="d-box" x="40" y="104" width="232" height="46" rx="7"/>
-          <text class="d-t" x="156" y="124" text-anchor="middle">Transcribed on this Mac</text>
-          <text class="d-t-sm" x="156" y="140" text-anchor="middle">~20 seconds per hour of audio</text>
-
-          <path class="d-pipe" d="M156 150 L156 162" marker-end="url(#arw-q)"/>
-
-          <rect class="d-box" x="40" y="162" width="232" height="36" rx="7"/>
-          <text class="d-t" x="156" y="179" text-anchor="middle">Transcript, tagged me vs. them</text>
-
-          <path class="d-pipe" d="M272 180 C296 180 300 124 316 124" marker-end="url(#arw-q)"/>
-
-          <rect class="d-box" x="316" y="98" width="98" height="52" rx="7"/>
-          <text class="d-t" x="365" y="118" text-anchor="middle">Claude</text>
-          <text class="d-t-sm" x="365" y="133" text-anchor="middle">writes the notes</text>
-          <text class="d-t-sm" x="365" y="166" text-anchor="middle">text only</text>
-          <text class="d-t-sm" x="365" y="180" text-anchor="middle">one approved address</text>
-
-          <text class="d-t-hl" x="210" y="226" text-anchor="middle">The audio itself never leaves the machine</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions">
-        <span class="note-private">Personal tool, not a public download — demo on request.</span>
-      </div>
-    </article>
-
-  </div>
-
-  <div class="sec-label">Platform Builds — Full-Feature Prototypes</div>
-  <div class="grid">
-
-    <article class="card">
-      <div class="badges"><span class="badge b-proto">Prototype</span></div>
-      <h3>Staffing / ATS Platform</h3>
-      <div class="role">Scale Virtually — Builder</div>
-      <p>A <strong>44-page</strong> hiring and HR platform built so several companies can use it side by side without
-      ever seeing each other's data. Recruiters drag candidates between stages on a board, and the same system
-      handles HR records and time tracking. <strong>GPT-4o</strong> writes the job posts, reads incoming résumés,
-      and ranks who actually fits.</p>
-      <div class="stack"><span class="chip">Next.js</span><span class="chip">Prisma</span><span class="chip">Supabase</span><span class="chip">Stripe</span><span class="chip">GPT-4o</span></div>
-      <div class="diagram compact">
-        <div class="diagram-scroll">
-        <svg viewBox="0 0 420 196" role="img" aria-label="A drag-and-drop applicant tracking board with four stages — applied, screen, interview and offer — where a candidate card moves between columns. Underneath, three AI features: job description generation, resume parsing, and candidate matching.">
-          <text class="d-lbl" x="210" y="13" text-anchor="middle">DRAG-AND-DROP ATS PIPELINE</text>
-
-          <rect class="d-panel" x="10" y="22" width="92" height="112" rx="7"/>
-          <text class="d-t-sm" x="56" y="38" text-anchor="middle">Applied</text>
-          <rect class="d-chip" x="18" y="46" width="76" height="16" rx="4"/>
-          <rect class="d-chip" x="18" y="68" width="76" height="16" rx="4"/>
-          <rect class="d-chip" x="18" y="90" width="76" height="16" rx="4"/>
-
-          <rect class="d-panel" x="110" y="22" width="92" height="112" rx="7"/>
-          <text class="d-t-sm" x="156" y="38" text-anchor="middle">Screen</text>
-          <rect class="d-chip" x="118" y="46" width="76" height="16" rx="4"/>
-
-          <rect class="d-panel" x="210" y="22" width="92" height="112" rx="7"/>
-          <text class="d-t-sm" x="256" y="38" text-anchor="middle">Interview</text>
-          <rect class="d-drop" x="218" y="68" width="76" height="16" rx="4" fill="none" stroke="#C5A059" stroke-width="1" stroke-dasharray="4 3"/>
-          <rect class="d-chip" x="218" y="90" width="76" height="16" rx="4"/>
-
-          <rect class="d-panel" x="310" y="22" width="92" height="112" rx="7"/>
-          <text class="d-t-sm" x="356" y="38" text-anchor="middle">Offer</text>
-          <rect class="d-chip" x="318" y="46" width="76" height="16" rx="4"/>
-
-          <g class="d-drag" style="transform-box:fill-box;transform-origin:center">
-            <rect x="118" y="68" width="76" height="16" rx="4" fill="rgba(197,160,89,.2)" stroke="var(--gold)" stroke-width="1"/>
-          </g>
-
-          <rect class="d-chip" x="8" y="146" width="128" height="24" rx="5"/>
-          <text class="d-t-sm" x="72" y="162" text-anchor="middle">GPT-4o JD generation</text>
-          <rect class="d-chip" x="146" y="146" width="128" height="24" rx="5"/>
-          <text class="d-t-sm" x="210" y="162" text-anchor="middle">Résumé parsing</text>
-          <rect class="d-chip" x="284" y="146" width="128" height="24" rx="5"/>
-          <text class="d-t-sm" x="348" y="162" text-anchor="middle">Candidate matching</text>
-
-          <text class="d-t-sm" x="210" y="188" text-anchor="middle">44 pages · multi-tenant · HR and time &amp; attendance modules</text>
-        </svg>
-        </div>
-        <div class="scroll-hint">Scroll the diagram sideways →</div>
-      </div>
-      <div class="actions"><a class="btn" href="https://client-scale-virtually-workable-clo.vercel.app/overview" target="_blank" rel="noopener">View live demo <span class="arrow">→</span></a></div>
-    </article>
-
-  </div>
-
+<section id="top" style="max-width: 1100px; margin: 0 auto; padding: clamp(48px, 8vw, 104px) clamp(16px, 4vw, 40px) clamp(40px, 6vw, 72px)">
+<p style="display: flex; align-items: center; gap: 12px; margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57">Selected Projects<span aria-hidden="true" style="width: 48px; height: 1px; background: #625F57"></span></p>
+<h1 style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(60px, 10vw, 132px); line-height: 0.95; letter-spacing: -0.025em; color: #1A1916">Sean Cook</h1>
+<p style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: clamp(20px, 2.6vw, 28px); line-height: 1.3; color: #3A3833">AI Leader <span style="color: #0F4C4F; font-style: normal">·</span> Forward Deployed Engineer <span style="color: #0F4C4F; font-style: normal">·</span> Builder</p>
+<p style="margin: 12px 0 0; font-size: 14px; color: #625F57">Frisco, TX</p>
+<div style="display: flex; flex-wrap: wrap; gap: 48px 64px; margin-top: 48px; align-items: flex-start">
+<div style="flex: 999 1 520px; min-width: 0">
+<p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: clamp(19px, 1.9vw, 22px); line-height: 1.55; color: #3A3833; max-width: 40em">I drive <strong style="color: #1A1916; font-weight: 600">AI strategy, transformation, and adoption</strong> — and I design and ship the <strong style="color: #1A1916; font-weight: 600">production systems</strong> that make it real, building them by orchestrating multi-agent clusters myself rather than managing from a distance. Twenty years of high-stakes technical delivery, from reservoir engineering embedded on-site at Saudi Aramco, ExxonMobil, and PetroChina to a live, multi-agent AI recruiting platform screening real candidates today. Below is a selection — several with live demos you can open.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px">
+<a href="mailto:sean@halandigital.com" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 2px; background: #0F4C4F; border: 1px solid #0F4C4F; color: #FFFFFF; text-decoration: none; font-size: 14.5px; font-weight: 600">Email sean@halandigital.com</a>
+<a href="https://linkedin.com/in/sean-cook-2018" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">LinkedIn <span aria-hidden="true">→</span></a>
+<a href="https://halandigital.com/" target="_blank" rel="noopener" style="padding: 10px 4px; font-size: 14.5px; font-weight: 500; color: #3A3833; text-decoration: underline; text-decoration-color: #DDD6CA; text-underline-offset: 4px">halandigital.com</a>
+</div>
+</div>
+<aside aria-label="At a glance" style="flex: 1 1 280px; min-width: 0; border-top: 1px solid #1A1916">
+<p style="margin: 0; padding-top: 14px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #0F4C4F">At a glance</p>
+<div style="padding: 18px 0; border-bottom: 1px solid #DDD6CA">
+<p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 40px; line-height: 1.05; color: #1A1916">20 years</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #625F57">of high-stakes technical delivery</p>
+</div>
+<div style="padding: 18px 0; border-bottom: 1px solid #DDD6CA">
+<p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 40px; line-height: 1.05; color: #1A1916">9 systems</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #625F57">from production platforms to full-feature builds</p>
+</div>
+<div style="padding: 18px 0">
+<p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 40px; line-height: 1.05; color: #0F4C4F">5 live demos</p>
+<p style="margin: 6px 0 0; font-size: 13px; color: #625F57">open them in your browser</p>
+</div>
+</aside>
+</div>
+</section>
+
+<section id="approach" style="background: #F2EEE6; border-top: 1px solid #DDD6CA; border-bottom: 1px solid #DDD6CA">
+<div style="max-width: 1100px; margin: 0 auto; padding: 44px clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; gap: 16px 64px; align-items: baseline">
+<h2 style="flex: 1 1 220px; margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #0F4C4F">How I build</h2>
+<p style="flex: 999 1 560px; min-width: 0; margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 20px; line-height: 1.55; color: #1A1916">Every system here was delivered by directing fleets of specialized AI subagents in Claude Code to plan, architect, and implement — then verifying and integrating the output. Applied agentic AI as a daily delivery model, not a slideware concept.</p>
+</div>
+</section>
+
+<main id="work">
+<section aria-labelledby="h-index" style="max-width: 1100px; margin: 0 auto; padding: 80px clamp(16px, 4vw, 40px) 0">
+<h2 id="h-index" style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 44px); letter-spacing: -0.015em; color: #1A1916">Selected work</h2>
+<p style="margin: 8px 0 28px; color: #625F57">Nine systems, grouped by type. Select one to jump to it.</p>
+<div style="overflow-x: auto; border-top: 1px solid #1A1916">
+<table style="width: 100%; min-width: 620px; border-collapse: collapse; font-size: 15px">
+<thead>
+<tr style="text-align: left">
+<th scope="col" style="padding: 14px 16px 14px 0; width: 48px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">No.</th>
+<th scope="col" style="padding: 14px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Project</th>
+<th scope="col" style="padding: 14px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</th>
+<th scope="col" style="padding: 14px 0 14px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Category</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">01</td>
+<td style="padding: 13px 16px"><a href="#p01" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">Autonomous AI Recruiting Pipeline</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Scale Virtually — Chief of AI</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Flagship</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">02</td>
+<td style="padding: 13px 16px"><a href="#p02" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">REI AI Command Center</a></td>
+<td style="padding: 13px 16px; color: #3A3833">REI Summit 2026 — Designer &amp; Builder</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Flagship</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">03</td>
+<td style="padding: 13px 16px"><a href="#p03" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">Voice Agent for Field Service Close-Out</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Commercial services contractor</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Client Systems</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">04</td>
+<td style="padding: 13px 16px"><a href="#p04" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">Real Estate Investment Platform</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Scale Virtually — Builder</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Client Systems</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">05</td>
+<td style="padding: 13px 16px"><a href="#p05" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">TRAIGA Readiness Platform</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Halan Digital — AI Governance Build</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Live Demos</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">06</td>
+<td style="padding: 13px 16px"><a href="#p06" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">Operations &amp; Automation Audit</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Celestial Beerworks — Consultant</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Live Demos</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">07</td>
+<td style="padding: 13px 16px"><a href="#p07" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">SeanOS</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Personal build — Architect &amp; Engineer</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Built for Myself</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">08</td>
+<td style="padding: 13px 16px"><a href="#p08" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">quill</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Personal build — Engineer</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Built for Myself</td>
+</tr>
+<tr style="border-top: 1px solid #DDD6CA">
+<td style="padding: 13px 16px 13px 0; font-family: 'Newsreader', Georgia, serif; color: #625F57">09</td>
+<td style="padding: 13px 16px"><a href="#p09" style="font-family: 'Newsreader', Georgia, serif; font-size: 18px; color: #1A1916; text-decoration: none">Staffing / ATS Platform</a></td>
+<td style="padding: 13px 16px; color: #3A3833">Scale Virtually — Builder</td>
+<td style="padding: 13px 0 13px 16px; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57; white-space: nowrap">Platform Builds</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============ 01 Flagship ============ -->
+<section aria-labelledby="s1" style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 0">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-top: 1px solid #1A1916; padding-top: 12px">
+<h2 id="s1" style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1916"><span style="color: #0F4C4F">01</span>  Flagship <span style="color: #625F57; font-weight: 500">— Multi-Agent AI Systems</span></h2>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #625F57">Projects 01–02</span>
+</div>
+
+<article id="p01" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0; border-bottom: 1px solid #DDD6CA">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">01</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Scale Virtually — Chief of AI</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">n8n</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Claude Code</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Speechace (speech AI)</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Supabase</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Resend</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Vercel</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Workable API</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Node.js</span></dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Scale</dt><dd style="margin: 4px 0 0; font-size: 15px; color: #3A3833">6 orchestrated workflows · ~1,800 automated tests</dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">Autonomous AI Recruiting Pipeline</h3>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">This screens job applicants from start to finish on its own. Someone applies, AI reads their résumé against the job, they record a voice interview whenever it suits them, the system scores both what they said and how they said it, then decides who moves forward. Nobody on the staffing team touches a normal application. It runs on real candidates today, built straight into the company's own hiring software.</p>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">The cost trick is routing. Every AI call goes to the cheapest model that can handle that particular step, which cut the bill <strong style="color: #1A1916; font-weight: 600">6.5×</strong> and brought screening down to about two cents a candidate.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-top: 24px; border-top: 1px solid #DDD6CA; border-bottom: 1px solid #DDD6CA">
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #0F4C4F">6.5×</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">AI cost cut</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">~2¢</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Per candidate screened</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">~1,800</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Automated tests</p></div>
+</div>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 01</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 236" role="img" aria-label="A five-step hiring funnel: the candidate applies, AI reads the resume against the job, the candidate records a voice interview, speech and answers are scored, and the system advances, holds or rejects. No human touches the normal path." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<text class="d-lbl-hl" x="210" y="13" text-anchor="middle">NO HUMAN TOUCH ON THE NORMAL PATH</text>
+<rect class="d-box" x="40" y="26" width="340" height="26" rx="6"/>
+<text class="d-t" x="210" y="43" text-anchor="middle">Candidate applies</text>
+<path class="d-chev" d="M203 55 L210 60 L217 55"/>
+<rect class="d-box" x="50" y="62" width="320" height="26" rx="6"/>
+<text class="d-t" x="210" y="79" text-anchor="middle">AI reads résumé against the job</text>
+<path class="d-chev" d="M203 91 L210 96 L217 91"/>
+<rect class="d-box" x="60" y="98" width="300" height="26" rx="6"/>
+<text class="d-t" x="210" y="115" text-anchor="middle">Records a voice interview</text>
+<path class="d-chev" d="M203 127 L210 132 L217 127"/>
+<rect class="d-box" x="70" y="134" width="280" height="26" rx="6"/>
+<text class="d-t" x="210" y="151" text-anchor="middle">Speech + answers scored</text>
+<path class="d-chev" d="M203 163 L210 168 L217 163"/>
+<rect x="80" y="170" width="260" height="26" rx="6" fill="#E4EEEC" stroke="#0F4C4F" stroke-width="1"/>
+<text class="d-t-hl" x="210" y="187" text-anchor="middle">Advance · hold · reject</text>
+<text class="d-t-sm" x="210" y="214" text-anchor="middle">Every AI call goes to the cheapest model that</text>
+<text class="d-t-sm" x="210" y="228" text-anchor="middle">can do that step — 6.5× cost cut</text>
+</svg>
+</div>
+</figure>
+<p style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 16px; color: #625F57">Internal production system — live walkthrough available on request.</p>
+</div>
+</article>
+
+<article id="p02" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">02</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">REI Summit 2026 — Designer &amp; Builder</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">React 19</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">TypeScript</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">OpenRouter LLMs</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Tailwind</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Vercel</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">REI AI Command Center</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">A dashboard for real estate investors with <strong style="color: #1A1916; font-weight: 600">six AI assistants</strong>, each doing one job: tracking the portfolio, finding deals, planning rehabs, chasing maintenance, sorting tax, and waking up cold leads. A seventh agent sits above them, works out who should handle a request, and pulls the answers back together. Demoed live at a national industry summit.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 02</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 216" role="img" aria-label="A CEO-level orchestrator agent sits at the centre and delegates to six specialised agents: portfolio, deal sourcing, rehab, maintenance, tax, and lead reactivation." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<defs><marker id="arw-e" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#A39C8E"/></marker></defs>
+<text class="d-lbl" x="210" y="13" text-anchor="middle">SIX AGENTS, ONE ORCHESTRATOR</text>
+<path class="d-pipe" d="M160 108 C146 108 146 42 130 42" marker-end="url(#arw-e)"/>
+<path class="d-pipe" d="M160 108 L130 108" marker-end="url(#arw-e)"/>
+<path class="d-pipe" d="M160 108 C146 108 146 174 130 174" marker-end="url(#arw-e)"/>
+<path class="d-pipe" d="M260 108 C276 108 276 42 290 42" marker-end="url(#arw-e)"/>
+<path class="d-pipe" d="M260 108 L290 108" marker-end="url(#arw-e)"/>
+<path class="d-pipe" d="M260 108 C276 108 276 174 290 174" marker-end="url(#arw-e)"/>
+<rect class="d-box" x="6" y="26" width="124" height="32" rx="6"/><text class="d-t" x="68" y="46" text-anchor="middle">Portfolio</text>
+<rect class="d-box" x="6" y="92" width="124" height="32" rx="6"/><text class="d-t" x="68" y="112" text-anchor="middle">Deal sourcing</text>
+<rect class="d-box" x="6" y="158" width="124" height="32" rx="6"/><text class="d-t" x="68" y="178" text-anchor="middle">Rehab</text>
+<rect class="d-box" x="290" y="26" width="124" height="32" rx="6"/><text class="d-t" x="352" y="46" text-anchor="middle">Maintenance</text>
+<rect class="d-box" x="290" y="92" width="124" height="32" rx="6"/><text class="d-t" x="352" y="112" text-anchor="middle">Tax</text>
+<rect class="d-box" x="290" y="158" width="124" height="32" rx="6"/><text class="d-t" x="352" y="178" text-anchor="middle">Lead reactivation</text>
+<rect x="160" y="90" width="100" height="36" rx="8" fill="#E4EEEC" stroke="#0F4C4F" stroke-width="1"/>
+<text class="d-t-hl" x="210" y="106" text-anchor="middle">CEO-level</text>
+<text class="d-t-hl" x="210" y="119" text-anchor="middle">orchestrator</text>
+<text class="d-t-sm" x="210" y="208" text-anchor="middle">Each agent owns a domain; the orchestrator routes and reconciles.</text>
+</svg>
+</div>
+</figure>
+<div style="margin-top: 24px"><a href="https://client-rei-summit-command-center.vercel.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">View live <span aria-hidden="true">→</span></a></div>
+</div>
+</article>
+</section>
+
+<!-- ============ 02 Client Systems ============ -->
+<section aria-labelledby="s2" style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 0">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-top: 1px solid #1A1916; padding-top: 12px">
+<h2 id="s2" style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1916"><span style="color: #0F4C4F">02</span>  Client Systems <span style="color: #625F57; font-weight: 500">— Integration Engineering</span></h2>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #625F57">Projects 03–04</span>
+</div>
+
+<article id="p03" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0; border-bottom: 1px solid #DDD6CA">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">03</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Commercial services contractor — via partner engagement</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">n8n</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Voice AI agent</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">ERP REST API</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Webhook tooling</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Python test harness</span></dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Scale</dt><dd style="margin: 4px 0 0; font-size: 15px; color: #3A3833">3 orchestrated workflows · 180+ automated checks, including live writes against a real ERP sandbox</dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">Voice Agent for Field Service Close-Out</h3>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">When a technician finishes a job, the billing team has to chase them by phone for the handful of details an invoice needs. This calls the tech instead. The agent asks a fixed set of questions, and the answers come back mid-call as structured data, land in the job record in the company's ERP, and flag the ones that need a human.</p>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">The hard part was writing into a system that already holds real people's work. The ERP only accepts a whole-note overwrite, and roughly a third of those notes already had a biller's own writing in them. So it <strong style="color: #1A1916; font-weight: 600">reads the note first, prepends to it, and refuses to write at all if that read fails</strong> — an automation that can silently destroy someone's work is worse than no automation.</p>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em"><strong style="color: #1A1916; font-weight: 600">Next on the roadmap:</strong> the close-out call is the first piece of a larger program. The anchor build is an invoice agent — it reads the finished job, works out what the customer's contract covers and what is billable, and drafts the invoice <em>on hold</em> so a person still releases every one. The model classifies and names the rule it applied; a deterministic step does all the money math, so no dollar figure is ever produced by a language model. After that comes the dispatch side: turning inbound service email into scheduled appointments, and after-hours coverage that knows who is on call.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 03</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 250" role="img" aria-label="A five-step pipeline: a job closes in the ERP, a queue is built with filtering, de-duplication and a forty-eight hour age cap, a voice agent calls the technician, seven structured answers return mid-call, and the system reads the existing job note, prepends to it and writes it back, refusing to write if the read fails." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<text class="d-lbl-hl" x="210" y="13" text-anchor="middle">NOBODY CHASES THE TECHNICIAN BY PHONE</text>
+<rect class="d-box" x="40" y="26" width="340" height="26" rx="6"/>
+<text class="d-t" x="210" y="43" text-anchor="middle">Job closes in the ERP</text>
+<path class="d-chev" d="M203 55 L210 60 L217 55"/>
+<rect class="d-box" x="50" y="62" width="320" height="26" rx="6"/>
+<text class="d-t" x="210" y="79" text-anchor="middle">Queue built: filtered, de-duped, 48-hour age cap</text>
+<path class="d-chev" d="M203 91 L210 96 L217 91"/>
+<rect class="d-box" x="60" y="98" width="300" height="26" rx="6"/>
+<text class="d-t" x="210" y="115" text-anchor="middle">Voice agent calls the technician</text>
+<path class="d-chev" d="M203 127 L210 132 L217 127"/>
+<rect class="d-box" x="70" y="134" width="280" height="26" rx="6"/>
+<text class="d-t" x="210" y="151" text-anchor="middle">7 structured answers return mid-call</text>
+<path class="d-chev" d="M203 163 L210 168 L217 163"/>
+<rect x="80" y="170" width="260" height="26" rx="6" fill="#E4EEEC" stroke="#0F4C4F" stroke-width="1"/>
+<text class="d-t-hl" x="210" y="187" text-anchor="middle">Read → prepend → write back</text>
+<text class="d-t-sm" x="210" y="214" text-anchor="middle">Anything the call could not confirm is flagged for a human</text>
+<text class="d-t-sm" x="210" y="228" text-anchor="middle">instead of guessed. If the read fails, nothing is written —</text>
+<text class="d-t-sm" x="210" y="242" text-anchor="middle">a biller&#39;s own notes are never overwritten.</text>
+</svg>
+</div>
+</figure>
+<p style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 16px; color: #625F57">Client system — anonymized at the client's discretion; walkthrough available on request.</p>
+</div>
+</article>
+
+<article id="p04" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">04</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Scale Virtually — Builder</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Next.js</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">TypeScript</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Supabase / PostGIS</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Mapbox</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Recharts</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">Real Estate Investment Platform</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">A <strong style="color: #1A1916; font-weight: 600">27-page</strong> platform for property investors. It rates any deal on eight weighted factors so every property ends up with one score you can compare, and prices a home by fitting a trend line through recent comparable sales — the reasoning an appraiser does by hand, done in a second. It also spots likely flips and drafts the contract.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 04</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 196" role="img" aria-label="Two mechanisms side by side: eight weighted factors combine into a single composite deal score, and an ordinary-least-squares regression fits a line through comparable sales to produce a valuation." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<defs><marker id="arw-i" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#A39C8E"/></marker></defs>
+<text class="d-lbl" x="100" y="13" text-anchor="middle">8-FACTOR DEAL SCORE</text>
+<text class="d-lbl" x="320" y="13" text-anchor="middle">OLS-REGRESSION CMA</text>
+<rect class="d-slot" opacity="0.35" x="14" y="30" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.42" x="14" y="42" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.49" x="14" y="54" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.56" x="14" y="66" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.63" x="14" y="78" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.70" x="14" y="90" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.77" x="14" y="102" width="56" height="7" rx="3"/>
+<rect class="d-slot" opacity="0.84" x="14" y="114" width="56" height="7" rx="3"/>
+<text class="d-t-sm" x="14" y="136">8 weighted factors</text>
+<path class="d-pipe" d="M70 34 C92 34 92 76 108 76"/>
+<path class="d-pipe" d="M70 76 L108 76" marker-end="url(#arw-i)"/>
+<path class="d-pipe" d="M70 118 C92 118 92 76 108 76"/>
+<rect x="108" y="58" width="82" height="36" rx="8" fill="#E4EEEC" stroke="#0F4C4F" stroke-width="1"/>
+<text class="d-t-hl" x="149" y="74" text-anchor="middle">Composite</text>
+<text class="d-t-hl" x="149" y="87" text-anchor="middle">deal score</text>
+<path class="d-axis" d="M232 26 L232 126 L410 126"/>
+<path class="d-fit" d="M240 116 L402 44"/>
+<g class="d-mark">
+<circle cx="248" cy="112" r="3.5"/><circle cx="262" cy="103" r="3.5"/><circle cx="276" cy="108" r="3.5"/>
+<circle cx="290" cy="95" r="3.5"/><circle cx="304" cy="90" r="3.5"/><circle cx="318" cy="96" r="3.5"/>
+<circle cx="332" cy="81" r="3.5"/><circle cx="346" cy="75" r="3.5"/><circle cx="360" cy="83" r="3.5"/>
+<circle cx="374" cy="64" r="3.5"/><circle cx="388" cy="57" r="3.5"/><circle cx="400" cy="50" r="3.5"/>
+</g>
+<text class="d-t-sm" x="321" y="140" text-anchor="middle">comparable sales → fitted valuation</text>
+<rect class="d-chip" x="60" y="152" width="140" height="24" rx="5"/>
+<text class="d-t-sm" x="130" y="168" text-anchor="middle">Flip detection</text>
+<rect class="d-chip" x="220" y="152" width="140" height="24" rx="5"/>
+<text class="d-t-sm" x="290" y="168" text-anchor="middle">Contract generation</text>
+<text class="d-t-sm" x="210" y="190" text-anchor="middle">27 pages · PostGIS + Mapbox geospatial layer</text>
+</svg>
+</div>
+</figure>
+<div style="margin-top: 24px"><a href="https://client-scale-virtually-website-clon.vercel.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">View live demo <span aria-hidden="true">→</span></a></div>
+</div>
+</article>
+</section>
+
+<!-- ============ 03 Live Demos ============ -->
+<section aria-labelledby="s3" style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 0">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-top: 1px solid #1A1916; padding-top: 12px">
+<h2 id="s3" style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1916"><span style="color: #0F4C4F">03</span>  Live Demos <span style="color: #625F57; font-weight: 500">— Open in Your Browser</span></h2>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #625F57">Projects 05–06</span>
+</div>
+
+<article id="p05" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0; border-bottom: 1px solid #DDD6CA">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">05</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Halan Digital — AI Governance Build</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">NIST AI RMF</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Vanilla JS</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">PDF pipeline</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Vercel</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">TRAIGA Readiness Platform</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">Texas passed a new AI law and most companies have no idea whether it applies to them. This asks <strong style="color: #1A1916; font-weight: 600">ten questions</strong>, weighs the answers, and tells you how exposed you are — plus the three things to fix first and where your industry is most at risk. It turns a compliance worry into a lead: people hand over their details to see their score.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 05</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 194" role="img" aria-label="Ten weighted questions are scored onto a three-band exposure tier scale of low, moderate and high, which returns the top three NIST AI RMF controls and sector-specific exposure points." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<text class="d-lbl" x="210" y="13" text-anchor="middle">WEIGHTED ASSESSMENT → EXPOSURE TIER</text>
+<rect class="d-slot" opacity="0.35" x="34" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.42" x="70" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.49" x="106" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.56" x="142" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.63" x="178" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.70" x="214" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.77" x="250" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.84" x="286" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.91" x="322" y="26" width="28" height="9" rx="3"/>
+<rect class="d-slot" opacity="0.98" x="358" y="26" width="28" height="9" rx="3"/>
+<text class="d-t-sm" x="210" y="50" text-anchor="middle">10 weighted questions</text>
+<path d="M204 62 L216 62 L210 72 z" fill="#0F4C4F"/>
+<rect x="40" y="76" width="110" height="16" rx="4" fill="#0F4C4F" opacity="0.18"/>
+<rect x="154" y="76" width="110" height="16" rx="4" fill="#0F4C4F" opacity="0.5"/>
+<rect x="268" y="76" width="112" height="16" rx="4" fill="#0F4C4F"/>
+<text class="d-t-sm" x="95" y="106" text-anchor="middle">Low</text>
+<text class="d-t-sm" x="209" y="106" text-anchor="middle">Moderate</text>
+<text class="d-t-sm" x="324" y="106" text-anchor="middle">High</text>
+<rect class="d-box" x="26" y="120" width="180" height="34" rx="6"/>
+<text class="d-t" x="116" y="135" text-anchor="middle">Top-3 NIST AI RMF</text>
+<text class="d-t" x="116" y="148" text-anchor="middle">controls</text>
+<rect class="d-box" x="214" y="120" width="180" height="34" rx="6"/>
+<text class="d-t" x="304" y="135" text-anchor="middle">Sector-specific</text>
+<text class="d-t" x="304" y="148" text-anchor="middle">exposure points</text>
+<text class="d-t-sm" x="210" y="180" text-anchor="middle">Ten questions in, a ranked remediation path out.</text>
+</svg>
+</div>
+</figure>
+<div style="margin-top: 24px"><a href="https://traiga-readiness.vercel.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">View live <span aria-hidden="true">→</span></a></div>
+</div>
+</article>
+
+<article id="p06" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">06</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Celestial Beerworks — Consultant</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">n8n</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">ROI modeling</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Process architecture</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Vercel</span></dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Outcome</dt><dd style="margin: 4px 0 0; font-size: 15px; color: #3A3833">$12.9K–$49K modeled net annual benefit</dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">Operations &amp; Automation Audit</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">A paid review of how the business actually runs day to day, and what to automate first. I mapped the work into a <strong style="color: #1A1916; font-weight: 600">five-stage automated workflow</strong>, then costed it three ways — cautious, likely, and best case — so they got an honest range instead of one flattering number. Delivered with an interactive page they could click through.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 06</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 196" role="img" aria-label="A five-stage n8n automation architecture feeds a three-scenario ROI model, which returns a modeled net annual benefit of 12.9 to 49 thousand dollars and a payback period of 6 to 20 months." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<defs><marker id="arw-c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#A39C8E"/></marker></defs>
+<text class="d-lbl" x="210" y="13" text-anchor="middle">FIVE-STAGE n8n ARCHITECTURE</text>
+<rect class="d-box" x="42" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="70" y="44" text-anchor="middle">01</text>
+<rect class="d-box" x="112" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="140" y="44" text-anchor="middle">02</text>
+<rect class="d-box" x="182" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="210" y="44" text-anchor="middle">03</text>
+<rect class="d-box" x="252" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="280" y="44" text-anchor="middle">04</text>
+<rect class="d-box" x="322" y="26" width="56" height="28" rx="6"/><text class="d-t-sm" x="350" y="44" text-anchor="middle">05</text>
+<path class="d-pipe" d="M98 40 L112 40" marker-end="url(#arw-c)"/>
+<path class="d-pipe" d="M168 40 L182 40" marker-end="url(#arw-c)"/>
+<path class="d-pipe" d="M238 40 L252 40" marker-end="url(#arw-c)"/>
+<path class="d-pipe" d="M308 40 L322 40" marker-end="url(#arw-c)"/>
+<text class="d-lbl" x="210" y="80" text-anchor="middle">THREE-SCENARIO ROI MODEL</text>
+<rect class="d-panel" x="14" y="90" width="190" height="56" rx="8"/>
+<text class="d-big" x="109" y="118" text-anchor="middle">$12.9K–$49K</text>
+<text class="d-t-sm" x="109" y="134" text-anchor="middle">modeled net annual benefit</text>
+<rect class="d-panel" x="216" y="90" width="190" height="56" rx="8"/>
+<text class="d-big" x="311" y="118" text-anchor="middle">6–20 months</text>
+<text class="d-t-sm" x="311" y="134" text-anchor="middle">payback period</text>
+<text class="d-t-sm" x="210" y="172" text-anchor="middle">Conservative, base, and upside cases — the range is the deliverable,</text>
+<text class="d-t-sm" x="210" y="186" text-anchor="middle">not a single flattering number.</text>
+</svg>
+</div>
+</figure>
+<div style="margin-top: 24px"><a href="https://celestial-audit-companion.vercel.app/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">View companion <span aria-hidden="true">→</span></a></div>
+</div>
+</article>
+</section>
+
+<!-- ============ 04 Built for Myself ============ -->
+<section aria-labelledby="s4" style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 0">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-top: 1px solid #1A1916; padding-top: 12px">
+<h2 id="s4" style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1916"><span style="color: #0F4C4F">04</span>  Built for Myself <span style="color: #625F57; font-weight: 500">— Shipped and Running Every Day</span></h2>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #625F57">Projects 07–08</span>
+</div>
+
+<article id="p07" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0; border-bottom: 1px solid #DDD6CA">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">07</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Personal build — Architect &amp; Engineer</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Claude Code</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Multi-agent orchestration</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Markdown + YAML</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Always-on VPS agent</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Tailscale</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">MCP servers</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Obsidian</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">GoHighLevel API</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">SeanOS — My Second Brain &amp; Operating System</h3>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">The system I run my working life on. I dump things in — meeting recordings, articles, voice notes, half-formed ideas — and it files each one, links it to what I already know, and hands me a plan in the morning. Two machines share one set of files: my Mac does the building, and a small always-on server runs the daily routine overnight. A watchdog checks every run and repairs the ones that fail.</p>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">It is all <strong style="color: #1A1916; font-weight: 600">plain text files</strong>. The dashboards and views on top are throwaway — any app can rebuild them — so nothing important is trapped in one program's format. I can move the whole thing to a different app, or a different AI model, without losing anything.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-top: 24px; border-top: 1px solid #DDD6CA; border-bottom: 1px solid #DDD6CA">
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">687</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Knowledge pages</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">10,628</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Links between them</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">305</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Live task records</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">122</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Specialist agents</p></div>
+</div>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 07</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 244" role="img" aria-label="Meetings, web clips, voice notes and an inbox all feed into one linked set of notes, which produces today's plan, an approval queue and a 6am brief. Two computers share the same plain text files." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<text class="d-lbl" x="210" y="13" text-anchor="middle">CAPTURE → ORGANIZE → PLAN MY DAY</text>
+<rect class="d-box" x="6" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="54" y="38" text-anchor="middle">Meetings</text>
+<rect class="d-box" x="110" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="158" y="38" text-anchor="middle">Web clips</text>
+<rect class="d-box" x="214" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="262" y="38" text-anchor="middle">Voice notes</text>
+<rect class="d-box" x="318" y="22" width="96" height="24" rx="6"/><text class="d-t-sm" x="366" y="38" text-anchor="middle">Inbox</text>
+<path class="d-pipe" d="M54 46 L54 62"/><path class="d-pipe" d="M158 46 L158 62"/>
+<path class="d-pipe" d="M262 46 L262 62"/><path class="d-pipe" d="M366 46 L366 62"/>
+<rect class="d-panel" x="20" y="62" width="380" height="118" rx="9"/>
+<g class="d-edge">
+<line x1="60" y1="92" x2="108" y2="80"/><line x1="108" y1="80" x2="156" y2="94"/>
+<line x1="156" y1="94" x2="204" y2="81"/><line x1="204" y1="81" x2="252" y2="93"/>
+<line x1="252" y1="93" x2="300" y2="79"/><line x1="300" y1="79" x2="348" y2="91"/>
+<line x1="52" y1="126" x2="100" y2="114"/><line x1="100" y1="114" x2="148" y2="128"/>
+<line x1="148" y1="128" x2="196" y2="115"/><line x1="196" y1="115" x2="244" y2="127"/>
+<line x1="244" y1="127" x2="292" y2="113"/><line x1="292" y1="113" x2="340" y2="125"/>
+<line x1="340" y1="125" x2="376" y2="116"/>
+<line x1="84" y1="150" x2="172" y2="152"/><line x1="172" y1="152" x2="260" y2="148"/>
+<line x1="260" y1="148" x2="348" y2="150"/>
+<line x1="60" y1="92" x2="52" y2="126"/><line x1="156" y1="94" x2="148" y2="128"/>
+<line x1="204" y1="81" x2="196" y2="115"/><line x1="300" y1="79" x2="292" y2="113"/>
+<line x1="348" y1="91" x2="340" y2="125"/><line x1="100" y1="114" x2="84" y2="150"/>
+<line x1="196" y1="115" x2="172" y2="152"/><line x1="292" y1="113" x2="260" y2="148"/>
+<line x1="340" y1="125" x2="348" y2="150"/>
+<line x1="60" y1="92" x2="196" y2="115"/><line x1="204" y1="81" x2="348" y2="150"/>
+<line x1="52" y1="126" x2="260" y2="148"/>
+</g>
+<circle class="d-node" cx="60" cy="92" r="3"/><circle class="d-node" cx="108" cy="80" r="3"/>
+<circle class="d-node" cx="156" cy="94" r="3"/><circle class="d-node-hl" cx="204" cy="81" r="4.5"/>
+<circle class="d-node" cx="252" cy="93" r="3"/><circle class="d-node" cx="300" cy="79" r="3"/>
+<circle class="d-node" cx="348" cy="91" r="3"/>
+<circle class="d-node" cx="52" cy="126" r="3"/><circle class="d-node" cx="100" cy="114" r="3"/>
+<circle class="d-node" cx="148" cy="128" r="3"/><circle class="d-node-hl" cx="196" cy="115" r="4.5"/>
+<circle class="d-node" cx="244" cy="127" r="3"/><circle class="d-node" cx="292" cy="113" r="3"/>
+<circle class="d-node" cx="340" cy="125" r="3"/><circle class="d-node" cx="376" cy="116" r="3"/>
+<circle class="d-node" cx="84" cy="150" r="3"/><circle class="d-node" cx="172" cy="152" r="3"/>
+<circle class="d-node-hl" cx="260" cy="148" r="4.5"/><circle class="d-node" cx="348" cy="150" r="3"/>
+<text class="d-t-sm" x="210" y="172" text-anchor="middle">687 pages, linked to each other automatically</text>
+<path class="d-pipe" d="M70 180 L70 192"/><path class="d-pipe" d="M210 180 L210 192"/><path class="d-pipe" d="M350 180 L350 192"/>
+<rect class="d-box" x="5" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="70" y="209" text-anchor="middle">Today&#39;s plan</text>
+<rect class="d-box" x="145" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="210" y="209" text-anchor="middle">What needs approval</text>
+<rect class="d-box" x="285" y="192" width="130" height="26" rx="6"/><text class="d-t-sm" x="350" y="209" text-anchor="middle">06:00 brief</text>
+<text class="d-t-sm" x="210" y="236" text-anchor="middle">Two machines, one set of plain text files</text>
+</svg>
+</div>
+</figure>
+<p style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 16px; color: #625F57">Private system — it runs my life, so it isn't public. Walkthrough available on request.</p>
+</div>
+</article>
+
+<article id="p08" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">08</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Personal build — Engineer</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Swift</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">SwiftUI</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Core Audio process taps</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Parakeet TDT 0.6B</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">FluidAudio</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">EventKit</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Claude API</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Keychain</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">quill — Meeting Notes That Never Leave My Mac</h3>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">A Mac app that records my meetings and writes up the notes. It records my microphone and the other person's audio as <strong style="color: #1A1916; font-weight: 600">two separate tracks</strong>, which is a simple trick that tells you who said what without any AI guessing at voices. The transcription runs on the laptop itself — about 20 seconds of work per hour of audio — so no recording is ever uploaded anywhere.</p>
+<p style="margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; max-width: 40em">I picked the parts by testing, not guessing. Apple's built-in on-device model went first: on a real 12,000-word meeting it credited the wrong person with half the conversation and dropped the details, so note-writing goes to Claude and the local model stays as the offline backup. That is the one thing that leaves the machine, it is text only, and it can only reach a single approved address.</p>
+<p style="margin: 0; font-size: 13.5px; color: #625F57; max-width: 48em">Built on an MIT-licensed capture core (digimata/quill). The meeting app, calendar layer, note pipeline, voice-note pipeline, and vault integration are mine.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); margin-top: 24px; border-top: 1px solid #DDD6CA; border-bottom: 1px solid #DDD6CA">
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">8,800</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Lines of Swift</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">90<span style="font-family: 'Inter', sans-serif; font-size: 14px; color: #625F57"> MB</span></p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Memory used</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">20<span style="font-family: 'Inter', sans-serif; font-size: 14px; color: #625F57"> sec</span></p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">To transcribe an hour</p></div>
+<div style="padding: 16px 16px 16px 0"><p style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-size: 32px; line-height: 1; color: #1A1916">0</p><p style="margin: 8px 0 0; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #625F57">Audio sent off the Mac</p></div>
+</div>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 08</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 240" role="img" aria-label="The microphone and system audio are recorded as two separate tracks, transcribed on the machine itself into a speaker-tagged transcript. All of that stays inside a boundary marked this machine. Only the finished text goes out to Claude to write the notes." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<defs><marker id="arw-q" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" fill="#A39C8E"/></marker></defs>
+<rect class="d-bound" x="6" y="20" width="300" height="182" rx="11"/>
+<text class="d-lbl" x="18" y="37">THIS MACHINE</text>
+<rect class="d-box" x="18" y="42" width="132" height="44" rx="7"/>
+<text class="d-t-sm" x="26" y="57">My mic</text>
+<rect class="bar" x="26" y="68.5" width="3" height="7"/><rect class="bar" x="32" y="65" width="3" height="14"/>
+<rect class="bar" x="38" y="67.5" width="3" height="9"/><rect class="bar" x="44" y="63" width="3" height="18"/>
+<rect class="bar" x="50" y="66.5" width="3" height="11"/><rect class="bar" x="56" y="69" width="3" height="6"/>
+<rect class="bar" x="62" y="64.5" width="3" height="15"/><rect class="bar" x="68" y="62" width="3" height="20"/>
+<rect class="bar" x="74" y="66" width="3" height="12"/><rect class="bar" x="80" y="68" width="3" height="8"/>
+<rect class="bar" x="86" y="63.5" width="3" height="17"/><rect class="bar" x="92" y="67" width="3" height="10"/>
+<rect class="bar" x="98" y="69.2" width="3" height="5.6"/><rect class="bar" x="104" y="65.5" width="3" height="13"/>
+<rect class="bar" x="110" y="67.8" width="3" height="8.4"/><rect class="bar" x="116" y="64" width="3" height="16"/>
+<rect class="d-box" x="160" y="42" width="132" height="44" rx="7"/>
+<text class="d-t-sm" x="168" y="57">Them</text>
+<rect class="bar2" x="168" y="64" width="3" height="16"/><rect class="bar2" x="174" y="68" width="3" height="8"/>
+<rect class="bar2" x="180" y="62.5" width="3" height="19"/><rect class="bar2" x="186" y="67" width="3" height="10"/>
+<rect class="bar2" x="192" y="69" width="3" height="6"/><rect class="bar2" x="198" y="65" width="3" height="14"/>
+<rect class="bar2" x="204" y="67.5" width="3" height="9"/><rect class="bar2" x="210" y="66" width="3" height="12"/>
+<rect class="bar2" x="216" y="63" width="3" height="18"/><rect class="bar2" x="222" y="68.5" width="3" height="7"/>
+<rect class="bar2" x="228" y="66.5" width="3" height="11"/><rect class="bar2" x="234" y="64.5" width="3" height="15"/>
+<rect class="bar2" x="240" y="67.2" width="3" height="9.6"/><rect class="bar2" x="246" y="68.8" width="3" height="6.4"/>
+<rect class="bar2" x="252" y="63.5" width="3" height="17"/><rect class="bar2" x="258" y="66.8" width="3" height="10.4"/>
+<path class="d-pipe" d="M84 86 C84 96 156 96 156 104" marker-end="url(#arw-q)"/>
+<path class="d-pipe" d="M226 86 C226 96 156 96 156 104" marker-end="url(#arw-q)"/>
+<rect class="d-box" x="40" y="104" width="232" height="46" rx="7"/>
+<text class="d-t" x="156" y="124" text-anchor="middle">Transcribed on this Mac</text>
+<text class="d-t-sm" x="156" y="140" text-anchor="middle">~20 seconds per hour of audio</text>
+<path class="d-pipe" d="M156 150 L156 162" marker-end="url(#arw-q)"/>
+<rect class="d-box" x="40" y="162" width="232" height="36" rx="7"/>
+<text class="d-t" x="156" y="179" text-anchor="middle">Transcript, tagged me vs. them</text>
+<path class="d-pipe" d="M272 180 C296 180 300 124 316 124" marker-end="url(#arw-q)"/>
+<rect class="d-box" x="316" y="98" width="98" height="52" rx="7"/>
+<text class="d-t" x="365" y="118" text-anchor="middle">Claude</text>
+<text class="d-t-sm" x="365" y="133" text-anchor="middle">writes the notes</text>
+<text class="d-t-sm" x="365" y="166" text-anchor="middle">text only</text>
+<text class="d-t-sm" x="365" y="180" text-anchor="middle">one approved address</text>
+<text class="d-t-hl" x="210" y="226" text-anchor="middle">The audio itself never leaves the machine</text>
+</svg>
+</div>
+</figure>
+<p style="margin: 24px 0 0; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 16px; color: #625F57">Personal tool, not a public download — demo on request.</p>
+</div>
+</article>
+</section>
+
+<!-- ============ 05 Platform Builds ============ -->
+<section aria-labelledby="s5" style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 0">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; border-top: 1px solid #1A1916; padding-top: 12px">
+<h2 id="s5" style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1916"><span style="color: #0F4C4F">05</span>  Platform Builds <span style="color: #625F57; font-weight: 500">— Full-Feature Prototypes</span></h2>
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: 14px; font-style: italic; color: #625F57">Project 09</span>
+</div>
+
+<article id="p09" style="display: flex; flex-wrap: wrap; gap: 32px 64px; padding: 56px 0">
+<div style="flex: 1 1 240px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<span style="font-family: 'Newsreader', Georgia, serif; font-size: clamp(44px, 5vw, 64px); line-height: 1; letter-spacing: -0.02em; color: #0F4C4F">09</span>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 16px">
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Client and role</dt><dd style="margin: 4px 0 0; font-size: 15px; font-weight: 500; color: #1A1916">Scale Virtually — Builder</dd></div>
+<div><dt style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #625F57">Built with</dt><dd style="margin: 8px 0 0; display: flex; flex-wrap: wrap; gap: 6px"><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Next.js</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Prisma</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Supabase</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">Stripe</span><span style="font-size: 12.5px; background: #F2EEE6; border-radius: 2px; padding: 3px 9px">GPT-4o</span></dd></div>
+</dl>
+</div>
+<div style="flex: 999 1 560px; min-width: 0">
+<h3 style="margin: 0 0 16px; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 32px); line-height: 1.15; letter-spacing: -0.012em; color: #1A1916">Staffing / ATS Platform</h3>
+<p style="margin: 0; font-size: 16.5px; line-height: 1.7; max-width: 40em">A <strong style="color: #1A1916; font-weight: 600">44-page</strong> hiring and HR platform built so several companies can use it side by side without ever seeing each other's data. Recruiters drag candidates between stages on a board, and the same system handles HR records and time tracking. <strong style="color: #1A1916; font-weight: 600">GPT-4o</strong> writes the job posts, reads incoming résumés, and ranks who actually fits.</p>
+<figure style="margin: 32px 0 0; background: #FFFFFF; border: 1px solid #DDD6CA; padding: 24px 24px 16px">
+<figcaption style="display: flex; justify-content: space-between; gap: 12px; margin: 0 0 16px; padding-bottom: 12px; border-bottom: 1px solid #DDD6CA; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #625F57"><span>Fig. 09</span><span>How it works</span></figcaption>
+<div style="overflow-x: auto">
+<svg viewBox="0 0 420 196" role="img" aria-label="A drag-and-drop applicant tracking board with four stages — applied, screen, interview and offer — where a candidate card moves between columns. Underneath, three AI features: job description generation, resume parsing, and candidate matching." style="display: block; width: 100%; max-width: 640px; min-width: 320px; height: auto; margin: 0 auto">
+<text class="d-lbl" x="210" y="13" text-anchor="middle">DRAG-AND-DROP ATS PIPELINE</text>
+<rect class="d-panel" x="10" y="22" width="92" height="112" rx="7"/>
+<text class="d-t-sm" x="56" y="38" text-anchor="middle">Applied</text>
+<rect class="d-chip" x="18" y="46" width="76" height="16" rx="4"/>
+<rect class="d-chip" x="18" y="68" width="76" height="16" rx="4"/>
+<rect class="d-chip" x="18" y="90" width="76" height="16" rx="4"/>
+<rect class="d-panel" x="110" y="22" width="92" height="112" rx="7"/>
+<text class="d-t-sm" x="156" y="38" text-anchor="middle">Screen</text>
+<rect class="d-chip" x="118" y="46" width="76" height="16" rx="4"/>
+<rect class="d-panel" x="210" y="22" width="92" height="112" rx="7"/>
+<text class="d-t-sm" x="256" y="38" text-anchor="middle">Interview</text>
+<rect x="218" y="68" width="76" height="16" rx="4" fill="none" stroke="#0F4C4F" stroke-width="1" stroke-dasharray="4 3" opacity="0.9"/>
+<rect class="d-chip" x="218" y="90" width="76" height="16" rx="4"/>
+<rect class="d-panel" x="310" y="22" width="92" height="112" rx="7"/>
+<text class="d-t-sm" x="356" y="38" text-anchor="middle">Offer</text>
+<rect class="d-chip" x="318" y="46" width="76" height="16" rx="4"/>
+<rect x="118" y="68" width="76" height="16" rx="4" fill="#FFFFFF" stroke="#0F4C4F" stroke-width="1" transform="translate(56 -3) rotate(-3 156 76)"/>
+<rect class="d-chip" x="8" y="146" width="128" height="24" rx="5"/>
+<text class="d-t-sm" x="72" y="162" text-anchor="middle">GPT-4o JD generation</text>
+<rect class="d-chip" x="146" y="146" width="128" height="24" rx="5"/>
+<text class="d-t-sm" x="210" y="162" text-anchor="middle">Résumé parsing</text>
+<rect class="d-chip" x="284" y="146" width="128" height="24" rx="5"/>
+<text class="d-t-sm" x="348" y="162" text-anchor="middle">Candidate matching</text>
+<text class="d-t-sm" x="210" y="188" text-anchor="middle">44 pages · multi-tenant · HR and time &amp; attendance modules</text>
+</svg>
+</div>
+</figure>
+<div style="margin-top: 24px"><a href="https://client-scale-virtually-workable-clo.vercel.app/overview" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 22px; border-radius: 2px; border: 1px solid #1A1916; color: #1A1916; text-decoration: none; font-size: 14.5px; font-weight: 600">View live demo <span aria-hidden="true">→</span></a></div>
+</div>
+</article>
+</section>
 </main>
 
-<footer class="wrap">
-  <span class="foot-cta">Let's talk — <a href="mailto:sean@halandigital.com">sean@halandigital.com</a></span>
-  <span>© 2026 Sean Cook · Halan Digital · Frisco, TX</span>
+<footer id="contact" style="margin-top: clamp(64px, 9vw, 112px); background: #1A1916; color: #E9E5DD">
+<div style="max-width: 1100px; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(16px, 4vw, 40px) 48px">
+<p style="margin: 0; font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #A9A399">Contact</p>
+<p style="margin: 16px 0 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(30px, 5.4vw, 60px); line-height: 1.1; letter-spacing: -0.015em; color: #FAF8F4; overflow-wrap: anywhere">Let's talk — <a href="mailto:sean@halandigital.com" style="color: #FAF8F4; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.14em; text-decoration-color: #6E9C9D">sean@halandigital.com</a></p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px 32px; margin-top: 32px; font-size: 14.5px">
+<a href="https://linkedin.com/in/sean-cook-2018" target="_blank" rel="noopener" style="color: #E9E5DD; text-decoration: none; border-bottom: 1px solid #55524B; padding-bottom: 2px">linkedin.com/in/sean-cook-2018</a>
+<a href="https://halandigital.com/" target="_blank" rel="noopener" style="color: #E9E5DD; text-decoration: none; border-bottom: 1px solid #55524B; padding-bottom: 2px">halandigital.com</a>
+</div>
+<p style="margin: 48px 0 0; padding-top: 16px; border-top: 1px solid #3A3833; font-size: 13px; color: #A9A399">© 2026 Sean Cook · Halan Digital · Frisco, TX</p>
+</div>
 </footer>
 
-<script>
-// Count-up on the stat strips. Numbers are already in the HTML, so this is
-// pure enhancement — no JS, no IntersectionObserver, or reduced motion all
-// leave the final figure on screen.
-(function () {
-  var els = document.querySelectorAll('[data-count]');
-  if (!els.length) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function run(el) {
-    var target = parseInt(el.getAttribute('data-count'), 10);
-    if (isNaN(target) || target === 0) return;
-    var start = null, dur = 1100;
-    function step(ts) {
-      if (start === null) start = ts;
-      var p = Math.min((ts - start) / dur, 1);
-      var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased).toLocaleString('en-US');
-      if (p < 1) requestAnimationFrame(step);
-    }
-    el.textContent = '0';
-    requestAnimationFrame(step);
-  }
-
-  if (reduce || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
-
-  var io = new IntersectionObserver(function (entries) {
-    for (var i = 0; i < entries.length; i++) {
-      if (entries[i].isIntersecting) { run(entries[i].target); io.unobserve(entries[i].target); }
-    }
-  }, { threshold: 0.4 });
-
-  for (var i = 0; i < els.length; i++) io.observe(els[i]);
-})();
-
-// Show a diagram's "scroll sideways" hint only when it actually overflows.
-(function () {
-  var boxes = document.querySelectorAll('.diagram-scroll');
-  if (!boxes.length) return;
-  function sync() {
-    for (var i = 0; i < boxes.length; i++) {
-      var hint = boxes[i].parentNode.querySelector('.scroll-hint');
-      if (!hint) continue;
-      if (boxes[i].scrollWidth - boxes[i].clientWidth > 4) hint.classList.add('on');
-      else hint.classList.remove('on');
-    }
-  }
-  sync();
-  window.addEventListener('resize', sync);
-  window.addEventListener('load', sync);
-})();
-</script>
-
+</div>
 </body>
 </html>
